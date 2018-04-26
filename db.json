@@ -1,0 +1,73 @@
+{
+    "Profissionais": [
+        {
+            "id": 1,
+            "Nome": "Gustavo",
+            "CPF": 12345678937,
+            "Idade": 18,
+            "RG": 121233213,
+            "CEP": 1234567,
+            "Formacao": [
+                "Analise de sistemas",
+                "Engenharia"
+            ],
+            "Telefone": 11944445555,
+            "NumeroCasa": 23,
+            "Usuario": "usuarioProf",
+            "Senha": "usuarioProf",
+            "Imagem": ""
+        }
+    ],
+    "ADM": [
+        {
+            "id": 1,
+            "usuario": "Felipe",
+            "email": "Felipe@teste.com",
+            "senha": "Felipe@teste.com"
+        }
+    ],
+    "Clientes": [
+        {
+            "id": 1,
+            "nome": "Cliente",
+            "CPF": 10987654321,
+            "CEP": 12345678,
+            "usuario": "Cliente",
+            "senha": "Cliente",
+            "imagem": ""
+        }
+    ],
+    "Servicos": [
+        {
+            "id": 1,
+            "nome": "unhas",
+            "tempoM": 5.5,
+            "Preco": 50,
+            "Img": ""
+        },
+        {
+            "id": 2,
+            "nome": "Corte",
+            "tempoM": 6,
+            "Preco": 70,
+            "Img": ""
+        }
+    ],
+    "Aval": [
+        {
+            "id_Prof": null,
+            "id_Cli": 1,
+            "Descricao": "",
+            "nota": 3
+        }
+    ],
+    "Agendados": [
+        {
+            "id": 1,
+            "id_Prof": 1,
+            "id_Cli": 1,
+            "data_horario": "",
+            "id_Serv": 1
+        }
+    ]
+}
