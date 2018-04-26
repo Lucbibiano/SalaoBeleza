@@ -16,7 +16,6 @@ export class ServicosComponent implements OnInit {
 
   ngOnInit() {
     this.servicoService.servicos().subscribe(servicos => this.servicos = servicos );
-    console.log(this.servicos);
   }
 
 }
