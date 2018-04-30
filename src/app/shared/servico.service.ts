@@ -3,7 +3,8 @@ import { Http } from '@angular/http';
 
 import { SALAO_API } from './API/api'
 
-import { Servicos } from './interfaces/servicos'
+import { Servicos } from './interfaces/servicos';
+import { Profissionais } from './interfaces/Profissionais';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
@@ -19,5 +20,9 @@ export class ServicoService {
       .map(response => response.json());
 
   }
+  profissionais(): Observable<Profissionais[]> {
+    return this.http.get(`${SALAO_API}/Profissionais`)
+      .map(response => response.json());
 
+  }
 }

@@ -9,12 +9,14 @@ import { MaterializeModule } from 'angular2-materialize';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ServicoService } from './shared/servico.service';
+import { ProfissionaisComponent } from './profissionais/profissionais.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ServicosComponent
+    ServicosComponent,
+    ProfissionaisComponent
   ],
   imports: [
     MaterializeModule,
