@@ -11,20 +11,11 @@ import { Profissionais } from '../../shared/interfaces/Profissionais';
 export class ListarProfComponent implements OnInit {
 
   @Input() profissional: Profissionais;
-  cor:string= "yellow";
   @Output() mudouCor = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
     
-  }
-  Entrou(){
-    this.cor = "red";
-    this.mudouCor.emit(this.cor);
-  }
-  Saiu(){
-    this.cor="yellow";
-    this.mudouCor.emit(this.cor);
   }
 
 }

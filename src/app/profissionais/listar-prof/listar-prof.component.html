@@ -1,44 +1,49 @@
-<div (mouseover)="Entrou()" (mouseout)="Saiu()" class="card" [style.background-color]="cor">
+<div id="escurecer">
 
-  <div class="card cor darken-3   " [style.background-color]="">
+  <div class="card" [style.background-color]="cor">
 
-    <div class="card-image waves-effect waves-block waves-light">
+    <div class="card cor darken-3" [style.background-color]="">
 
-      <img class="activator" id="cardPic" [src]="profissional.Imagem+'.jpg'">
 
-    </div>
+      <div class="card-image waves-effect waves-block waves-light">
 
-    <div class="card-content" [style.background-color]="">
+        <img class="activator" id="cardPic" [src]="profissional.Imagem+'.jpg'">
 
-      <span class="card-title  waves-block ">
+      </div>
 
-        <b> Nome:</b>
-        <span class="truncate">{{profissional.Nome}}</span>
+      <div class="card-content" [style.background-color]="">
 
-        <b>Idade: </b>{{profissional.Idade}} </span>
+        <span class="card-title  waves-block ">
 
-    </div>
+          <b> Nome:</b>
+          <span class="truncate">{{profissional.Nome}}
+          </span>
 
-    <div class="card-reveal white-text cor darken-3 " [style.background-color]="">
+          <b>Idade: </b>{{profissional.Idade}} </span>
 
-      <div class="card-title">
+      </div>
 
-        <br>
-        <i class="material-icons right">close</i>
-        <b> CPF: </b> {{profissional.CPF}}
-        <br>
-        <b>RG:</b> {{profissional.RG}}
-        <br>
-        <b> CEP: </b>{{profissional.CEP}}
-        <br>
+      <div class="card-reveal white-text cor darken-3 " [style.background-color]="">
 
-        <div class="form">
-          <b>Formações:</b>
+        <div class="card-title">
+
+          <br>
+          <i class="material-icons right">close</i>
+          <b> CPF: </b> {{profissional.CPF}}
+          <br>
+          <b>RG:</b> {{profissional.RG}}
+          <br>
+          <b> CEP: </b>{{profissional.CEP}}
+          <br>
+
           <div class="form">
-            <span *ngFor="let formacao of profissional.Formacao">
-              {{formacao}}''
-              <br>
-            </span>
+            <b>Formações:</b>
+            <div class="form">
+              <span *ngFor="let formacao of profissional.Formacao">
+                {{formacao}}''
+                <br>
+              </span>
+            </div>
           </div>
         </div>
       </div>
