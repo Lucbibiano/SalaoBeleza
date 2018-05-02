@@ -10,13 +10,15 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ServicoService } from './shared/servico.service';
 import { ProfissionaisComponent } from './profissionais/profissionais.component';
+import { ListarProfComponent } from './profissionais/listar-prof/listar-prof.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ServicosComponent,
-    ProfissionaisComponent
+    ProfissionaisComponent,
+    ListarProfComponent
   ],
   imports: [
     MaterializeModule,

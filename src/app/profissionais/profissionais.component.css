@@ -1,9 +1,6 @@
 .blocoInf {
     border: 1px solid black;
     float: left;
-    padding: 10px;
-    height: 300px;
-    margin: 0px;
     width: 50%;
 }
 
@@ -23,6 +20,7 @@ img {
 .texto {
     margin-left: auto;
     margin-right: auto;
+    text-align: center; 
     width: 50%;
     font-weight: bolder;
     text-transform: uppercase;

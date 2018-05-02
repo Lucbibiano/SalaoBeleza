@@ -2,47 +2,7 @@
   <p class="texto">
     Profissionais
   </p>
-  <ul class="blocoInf" *ngFor="let profissional of profissionais">
-    <div class="card">
-      <div class="card-image waves-effect waves-block waves-light">
-        <li>
-          <img class="activator" [src]="profissional.Imagem+'.jpg'">
-        </li>
-      </div>
-      <div class="card-content">
-        <li>
-          <span class="card-title activator grey-text text-darken-4">
-            <b> Nome:</b> {{profissional.Nome}}
-            <br>
-            <b>Idade: </b>{{profissional.Idade}} </span>
-        </li>
-      </div>
-      <div class="card-reveal">
-        <p class="card-title grey-text text-darken-4">
-          <li>
-            <b> Nome: </b>{{profissional.Nome}}
-            <i class="material-icons right">close</i>
-          </li>
-          <li>
-            <b> CPF: </b> {{profissional.CPF}}
-          </li>
-          <li>
-            <b>RG:</b> {{profissional.RG}}
-          </li>
-          <li>
-            <b> CEP: </b>{{profissional.CEP}}
-          </li>
-          <li class="form">
-            <b>Formações:</b>
-            <div class="form">
-              <span *ngFor="let formacao of profissional.Formacao">
-                {{formacao}};
-                <br>
-              </span>
-            </div>
-          </li>
-        </p>
-      </div>
-    </div>
-  </ul>
+  <div class="blocoInf" *ngFor="let profissional of profissionais">
+    <app-listar-prof [profissional]="profissional"></app-listar-prof>
+  </div>
 </div>
