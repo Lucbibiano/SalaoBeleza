@@ -1,16 +1,16 @@
 <div (mouseover)="Entrou()" (mouseout)="Saiu()" class="card" [style.background-color]="cor">
 
-  <div class="card-image" [style.background-color]="cor">
+  <div class="card" [style.background-color]="cor">
 
     <div class="card-image waves-effect waves-block waves-light">
 
       <img class="activator" [src]="profissional.Imagem+'.jpg'">
 
     </div>
-    
+
     <div class="card-content" [style.background-color]="cor">
 
-      <span class="card-title activator waves-block grey-text text-darken-4">
+      <span class="card-title  waves-block grey-text text-darken-4">
 
         <b> Nome:</b> {{profissional.Nome}}
         <br>
@@ -32,26 +32,15 @@
         <br>
 
         <div class="form">
-
           <b>Formações:</b>
-
           <div class="form">
-
             <span *ngFor="let formacao of profissional.Formacao">
-
               {{formacao}};
               <br>
-
             </span>
-
           </div>
-
         </div>
-
       </div>
-
     </div>
-
   </div>
-
 </div>

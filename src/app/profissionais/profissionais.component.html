@@ -1,8 +1,10 @@
 <div class="container">
-  <p class="texto">
-    Profissionais
-  </p>
-  <div class="blocoInf" *ngFor="let profissional of profissionais">
-    <app-listar-prof [profissional]="profissional"></app-listar-prof>
+  <div class="center">
+    <h2>profissionais</h2>
+  </div>
+  <div class="row center">
+    <div class="blocoInf col l3 s12" *ngFor="let profissional of profissionais">
+      <app-listar-prof [profissional]="profissional"></app-listar-prof>
+    </div>
   </div>
 </div>
