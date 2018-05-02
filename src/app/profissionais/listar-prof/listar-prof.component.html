@@ -1,26 +1,27 @@
 <div (mouseover)="Entrou()" (mouseout)="Saiu()" class="card" [style.background-color]="cor">
 
-  <div class="card" [style.background-color]="cor">
+  <div class="card red darken-3 white-text  " [style.background-color]="">
 
     <div class="card-image waves-effect waves-block waves-light">
 
-      <img class="activator" [src]="profissional.Imagem+'.jpg'">
+      <img class="activator" id="cardPic" [src]="profissional.Imagem+'.jpg'">
 
     </div>
 
-    <div class="card-content" [style.background-color]="cor">
+    <div class="card-content" [style.background-color]="">
 
-      <span class="card-title  waves-block grey-text text-darken-4">
+      <span class="card-title  waves-block ">
 
-        <b> Nome:</b> {{profissional.Nome}}
-        <br>
+        <b> Nome:</b>
+        <span class="truncate">{{profissional.Nome}}</span>
+
         <b>Idade: </b>{{profissional.Idade}} </span>
 
     </div>
 
-    <div class="card-reveal text-darken-4" [style.background-color]="cor">
+    <div class="card-reveal white-text red darken-3 " [style.background-color]="">
 
-      <div class="card-title grey-text text-darken-4">
+      <div class="card-title">
 
         <br>
         <i class="material-icons right">close</i>
@@ -35,7 +36,7 @@
           <b>Formações:</b>
           <div class="form">
             <span *ngFor="let formacao of profissional.Formacao">
-              {{formacao}};
+              {{formacao}}''
               <br>
             </span>
           </div>
