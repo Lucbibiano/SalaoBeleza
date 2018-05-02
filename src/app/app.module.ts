@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { ServicoService } from './shared/servico.service';
 import { ProfissionaisComponent } from './profissionais/profissionais.component';
 import { ListarProfComponent } from './profissionais/listar-prof/listar-prof.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ListarProfComponent } from './profissionais/listar-prof/listar-prof.com
     AppComponent,
     ServicosComponent,
     ProfissionaisComponent,
-    ListarProfComponent
+    ListarProfComponent,
+    NavBarComponent
   ],
   imports: [
     MaterializeModule,
