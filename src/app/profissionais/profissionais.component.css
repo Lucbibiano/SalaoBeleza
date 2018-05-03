@@ -1,35 +1,4 @@
-/* .blocoInf {
-    border: 1px solid black;
-    float: left;
-    width: 50%;
+.container{
+    background-color:yellow;
+    padding:0px 15px 0px 15px;
 }
-
-.form {
-    border: 1px dashed lightgray;
-    width: 200px;
-    float: left;
-}
-
-img {
-    min-width: 150px;
-    max-width: 150px;
-    min-height: 150px;
-    max-height: 150px;
-}
-
-.texto {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center; 
-    width: 50%;
-    font-weight: bolder;
-    text-transform: uppercase;
-    font-size: 50px;
-}
-
-.container {
-    border: 2px dashed lightgray;
-}
-li{
-    width: 100%;
-} */
