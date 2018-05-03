@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import  { ServicoService } from '../shared/servico.service';
 import { Servicos } from '../shared/interfaces/servicos';
+import { ServicoprestadoService } from './servicosprestados.service';
 
 @Component({
   selector: 'app-servicos',
@@ -11,11 +11,24 @@ import { Servicos } from '../shared/interfaces/servicos';
 export class ServicosComponent implements OnInit {
 
   servicos: Servicos[];
+  cor = "yellow"
+  seleciona:boolean = false;
+  idService:number;
 
-  constructor( private servicoService:ServicoService) { }
+  constructor( private servicoService:ServicoprestadoService, ) { }
 
   ngOnInit() {
-    this.servicoService.servicos().subscribe(servicos => this.servicos = servicos );
+    
+    this.servicoService.servicos().subscribe(servicos => this.servicos = servicos);
+    
+
   }
+
+ selecionar(servico){
+
+  this.servicoService.numeroId = servico;
+
+ }
+
 
 }

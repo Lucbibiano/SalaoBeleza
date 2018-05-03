@@ -1,5 +1,20 @@
-<ul>
-  <li *ngFor="let servico of servicos" >
-    {{servico.nome}}
-  </li>
-</ul>
+<div style="position:relative; background-image: url('../../assets/hairsfundo.jpg'); height:600px">
+<br><br>
+ <div style="background-color:rgb(199, 186, 190);width:50%;height:500px; position:relative; margin-left:400px; border:2px solid black; opacity:0.7"> 
+ <div class="container" >
+
+  <h3 style="text-align:center; font-family:'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Servicos</h3>
+
+   <br>
+  <div  *ngFor="let servico of servicos" style="background-color:rgb(211, 59, 231);height:30%; width:95%; border:2px solid rgb(0, 0, 0); margin-top:20px" >
+
+   <div  [routerLink]="['/servico', servico.id]" style="margin-left:20px" #service >{{servico.nome}}</div>
+   <div  style="float:left">IMAGEM DAS UNHAS</div>
+   <br>
+   <div>DURAÇÃO: {{servico.tempoM}}HORAS</div>
+
+   <div> Preço: {{servico.Preco}}</div>
+  </div>
+  </div> 
+ </div>
+</div>

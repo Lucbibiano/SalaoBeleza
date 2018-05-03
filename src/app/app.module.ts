@@ -1,33 +1,41 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { ServicosComponent } from './servicos/servicos.component';
-
-
 import { MaterializeModule } from 'angular2-materialize';
+import 'materialize-css';
 
-import { HttpModule } from '@angular/http';
+
 import { AppComponent } from './app.component';
-import { ServicoService } from './shared/servico.service';
+import { HomeComponent } from './home/home.component';
+import { SobreComponent } from './sobre/sobre.component';
+import { ServicosComponent } from './servicos/servicos.component';
 import { ProfissionaisComponent } from './profissionais/profissionais.component';
+import { AgendarComponent } from './agendar/agendar.component';
+import { AppRoutingModule } from './app.routing.module';
 import { ListarProfComponent } from './profissionais/listar-prof/listar-prof.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { HttpModule } from '@angular/http';
+import { ServicoprestadoService } from './servicos/servicosprestados.service';
+import { ServicoComponent } from './servicos/servico/servico.component';
+import { ServicoService } from './shared/servico.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
+    SobreComponent,
     ServicosComponent,
     ProfissionaisComponent,
+    AgendarComponent,
     ListarProfComponent,
-    NavBarComponent
+    ServicoComponent
   ],
   imports: [
-    MaterializeModule,
     BrowserModule,
-    HttpModule
+    AppRoutingModule,
+    HttpModule,
   ],
-  providers: [ServicoService],
+  providers: [ServicoprestadoService, ServicoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
