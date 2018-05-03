@@ -8,6 +8,7 @@ import { ProfissionaisComponent } from "./profissionais/profissionais.component"
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { ServicoComponent } from "./servicos/servico/servico.component";
+import { GerarImagensComponent } from "./gerar-imagens/gerar-imagens.component";
 
 
 const routing: Routes = [
@@ -28,6 +29,9 @@ const routing: Routes = [
     { path:'home', component: HomeComponent,
     
     },
+    { path:'gerar', component: GerarImagensComponent,
+    
+},
     { path:'agendamento', component: AgendarComponent},
 
     { path:'profissionais', component: ProfissionaisComponent}
