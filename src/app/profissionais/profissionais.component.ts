@@ -9,13 +9,15 @@ import { Profissionais } from '../shared/interfaces/Profissionais';
   styleUrls: ['./profissionais.component.css']
 })
 export class ProfissionaisComponent implements OnInit {
-
+  @Input() selectedFunc:string;
   profissionais: Profissionais[]
   constructor(private servicoService: ServicoService) { }
 
   ngOnInit() {
     this.servicoService.profissionais().subscribe(profissionais => this.profissionais = profissionais);
   }
-
+  setName(event){
+    this.selectedFunc=event;
+  }
 
 }

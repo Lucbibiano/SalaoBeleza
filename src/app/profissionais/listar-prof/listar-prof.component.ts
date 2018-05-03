@@ -11,11 +11,14 @@ import { Profissionais } from '../../shared/interfaces/Profissionais';
 export class ListarProfComponent implements OnInit {
 
   @Input() profissional: Profissionais;
-  @Output() mudouCor = new EventEmitter();
+  @Output() selecionado = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
     
   }
-
+  selecionar(nome){
+    console.log("O Funcionário: "+nome+", foi selecionado(a)");
+    this.selecionado.emit(nome);
+  }
 }
