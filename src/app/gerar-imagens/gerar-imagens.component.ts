@@ -3,7 +3,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-gerar-imagens',
-  templateUrl: './gerar-imagens.component.html'
+  templateUrl: './gerar-imagens.component.html',
+  styleUrls: ['./gerar-imagens.component.css']
 })
 export class GerarImagensComponent implements OnInit {
 
@@ -12,6 +13,7 @@ export class GerarImagensComponent implements OnInit {
   formularioImagem: FormGroup;
   imgFile: File;
   leitorImg = new FileReader();
+  exibirCod: boolean = false;
 
   ngOnInit() {
     this.formularioImagem = this.fb.group({
@@ -25,7 +27,7 @@ export class GerarImagensComponent implements OnInit {
   }
 
   enviar(){
-
+    this.exibirCod = true;
   }
 
 }

@@ -20,7 +20,6 @@ import { ServicoComponent } from './servicos/servico/servico.component';
 import { ServicoService } from './shared/servico.service';
 import { GerarImagensComponent } from './gerar-imagens/gerar-imagens.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +36,8 @@ import { GerarImagensComponent } from './gerar-imagens/gerar-imagens.component';
     BrowserModule,
     AppRoutingModule,
     HttpModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
   ],
   providers: [ServicoprestadoService, ServicoService],
   bootstrap: [AppComponent]
