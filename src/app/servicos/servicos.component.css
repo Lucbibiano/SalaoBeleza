@@ -4,10 +4,10 @@
 }
 
 img {
-    min-width: 75px;
-    min-height: 75px;
-    max-width: 75px;
-    max-height: 75px;
+    min-width: 150px;
+    min-height: 150px;
+    max-width: 150px;
+    max-height: 150px;
 }
 
 #serv {
@@ -23,6 +23,12 @@ img {
     border: 2px solid black;
     opacity: 0.7
 }
+
+/* .body{
+    position: relative;
+    background-image: url('../../assets/hairsfundo.jpg');
+    height: 100%;
+} */
 
 #background {
     position: relative;

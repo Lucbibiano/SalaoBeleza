@@ -300,7 +300,7 @@
         },
         {
             "id": 3,
-            "nome": "hidratação",
+            "nome": "hidratacao",
             "tempoM": 3,
             "Preco": 50,
             "Img": "Hidratacao.jpg"

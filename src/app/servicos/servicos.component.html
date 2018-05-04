@@ -1,22 +1,28 @@
 <div id="background">
-<br><br>
- <div id="div2Maior"> 
- <div class="container" >
+    <div id="div2Maior">
+        <div class="container">
+            <h3 id="serv">Servicos</h3>
+            <div class="row" *ngFor="let servico of servicos" id="backgroundCadaServ">
 
-  <h3 id="serv">Servicos</h3>
-
-   <br>
-  <div  *ngFor="let servico of servicos" id="backgroundCadaServ" >
-
-   <div  [routerLink]="['/servico', servico.id]" style="margin-left:20px" #service >{{servico.nome}}</div>
-   <div  style="float:left">
-       <img [src]="'./assets/ServicoP/' + servico.Img " >
-   </div>
-   <br>
-   <div>DURAÇÃO: {{servico.tempoM}}HORAS</div>
-
-   <div> Preço: {{servico.Preco}}</div>
-  </div>
-  </div> 
- </div>
+                <div class="col s5">
+                    <img [src]="'./assets/ServicoP/' + servico.Img ">
+                </div>
+                <div class="col s6 valign-wrapper">
+                    <div [routerLink]="['/servico', servico.id]" class="col s16">
+                        <ul>
+                            <li>
+                                <b>Serviço:</b> {{servico.nome | titlecase}}</li>
+                            <li>
+                                <b>Duração:</b> {{servico.tempoM}} horas</li>
+                            <li>
+                                <b>Preço:</b> {{servico.Preco | currency : 'BRL'}}</li>
+                        </ul>
+                        <div>
+                            <button class="btn purple">Solicitar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

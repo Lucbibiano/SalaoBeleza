@@ -15,7 +15,7 @@ export class ServicoComponent implements OnInit {
   nomeService:String;
   tempoMedio:number;
   precoService:number;
-  imagem:string="ESSA È A IMAGEM"
+  imagem:string="ESSA È A IMAGEM";
   
 
   constructor(private route:ActivatedRoute, private servicoService:ServicoprestadoService) { 
