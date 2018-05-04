@@ -6,12 +6,11 @@
         <input style="display: none" type="file" id="imagem" formControlname="caminhoImagem" (change)="onChange($event)" #image>
       </div>
     </div>
-    <button class="btn blue" (click)="image.click()">Escolha uma imagem</button>
-    <br>
-    <br>
-    <button class="btn blue" (click)="enviar()">Gerar</button>
+    <button class="btn blue" (click)="image.click()">Escolha uma imagem</button><br><br>
+    <button class="btn blue" ngxClipboard [cbContent]="leitorImg.result">Clique para gerar e copiar</button>
+    <p class="flow-text center">{{imgFile?.name}}</p>
   </form>
-  <div class="codigo quebraLinha" *ngIf="exibirCod">
-      {{leitorImg.result}}
+  <div class="codigo quebraLinha">
+    {{leitorImg?.result}}
   </div>
 </div>

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { MaterializeModule } from 'angular2-materialize';
 import 'materialize-css';
-import {ReactiveFormsModule} from '@angular/forms'
+import {ReactiveFormsModule, FormsModule} from '@angular/forms'
 
 
 import { AppComponent } from './app.component';
@@ -19,6 +19,7 @@ import { ServicoprestadoService } from './servicos/servicosprestados.service';
 import { ServicoComponent } from './servicos/servico/servico.component';
 import { ServicoService } from './shared/servico.service';
 import { GerarImagensComponent } from './gerar-imagens/gerar-imagens.component';
+import { ClipboardModule } from 'ngx-clipboard';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { GerarImagensComponent } from './gerar-imagens/gerar-imagens.component';
     AppRoutingModule,
     HttpModule,
     ReactiveFormsModule,
-    
+    ClipboardModule,
+    FormsModule
   ],
   providers: [ServicoprestadoService, ServicoService],
   bootstrap: [AppComponent]

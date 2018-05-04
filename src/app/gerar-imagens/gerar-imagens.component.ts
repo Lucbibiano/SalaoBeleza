@@ -13,7 +13,6 @@ export class GerarImagensComponent implements OnInit {
   formularioImagem: FormGroup;
   imgFile: File;
   leitorImg = new FileReader();
-  exibirCod: boolean = false;
 
   ngOnInit() {
     this.formularioImagem = this.fb.group({
@@ -25,9 +24,4 @@ export class GerarImagensComponent implements OnInit {
     this.imgFile = event.target.files[0];
     this.leitorImg.readAsDataURL(this.imgFile);
   }
-
-  enviar(){
-    this.exibirCod = true;
-  }
-
 }
