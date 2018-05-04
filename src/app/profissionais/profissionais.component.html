@@ -1,11 +1,14 @@
 <div class="container">
-  <h1 *ngIf="selectedFunc" >O funcionário: {{selectedFunc}} foi selecionado</h1>
+  <h1  id="showSelect"  #showSelect>
+    <span *ngIf="showSelected">{{showSelected}}  <hr></span> 
+    
+  </h1>
   <div class="center">
     <h2>profissionais</h2>
   </div>
   <div class="row center">
     <div class="blocoInf col l4 s12" *ngFor="let profissional of profissionais">
-      <app-listar-prof [profissional]="profissional" (selecionado)="setName($event)"></app-listar-prof>
+        <app-listar-prof [profissional]="profissional" (selecionado)="setName($event)"></app-listar-prof>
     </div>
   </div>
 

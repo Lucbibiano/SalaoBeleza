@@ -3,13 +3,13 @@
   <div class="card cor darken-3">
 
 
-    <div class="card-image waves-effect waves-block waves-light">
+    <div class="card-image">
 
       <img class="activator" id="cardPic" [src]="'./'+profissional.Imagem+'.jpg'">
-
+      <!-- <span class="activator" style="position: absolute; margin-top:-20px; color: rgb(170, 0, 23);">(informações)</span> -->
     </div>
 
-    <div class="card-content">
+    <div class="card-content" (click)="selecionar(profissional)">
 
       <span class="card-title  waves-block ">
 
@@ -18,7 +18,7 @@
         </span>
 
         <b>Idade: </b>{{profissional.Idade}} </span>
-
+      <span class="indcText">(Selecionar)</span>
     </div>
 
     <div class="card-reveal white-text cor darken-3 ">
@@ -49,6 +49,6 @@
         </div>
       </div>
     </div>
-    <button style="color:black" (click)="selecionar(profissional.Nome)">Selecionar</button>
+    <!-- <button style="color:black" (click)="selecionar(profissional)">Selecionar</button> -->
   </div>
 </div>

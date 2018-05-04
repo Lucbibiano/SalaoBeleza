@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ServicoService } from '../shared/servico.service';
 
 import { Profissionais } from '../shared/interfaces/Profissionais';
@@ -9,15 +9,28 @@ import { Profissionais } from '../shared/interfaces/Profissionais';
   styleUrls: ['./profissionais.component.css']
 })
 export class ProfissionaisComponent implements OnInit {
-  @Input() selectedFunc:string;
+  showSelected: string;
   profissionais: Profissionais[]
+  @ViewChild('showSelect') public showSelect: ElementRef;
+
   constructor(private servicoService: ServicoService) { }
 
   ngOnInit() {
     this.servicoService.profissionais().subscribe(profissionais => this.profissionais = profissionais);
   }
-  setName(event){
-    this.selectedFunc=event;
+  setName(selectedProfissional: Profissionais) {
+    this.moverAteCabecalho();
+    let letra: string;
+    if (selectedProfissional.Masculino) {
+      letra = "o";
+    } else {
+      letra = "a";
+    }
+    this.showSelected = "" + letra.toUpperCase() + " profissional " + selectedProfissional.Nome + " foi selecionad" + letra.toLowerCase();
+  }
+
+  moverAteCabecalho() {
+    this.showSelect.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'start' });
   }
 
 }
