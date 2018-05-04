@@ -27,8 +27,7 @@ const routing: Routes = [
     
     },
     { path:'gerar', component: GerarImagensComponent,
-    
-
+    },
     { path:'agendamento', component: AgendarComponent},
 
     { path:'profissionais', component: ProfissionaisComponent}
