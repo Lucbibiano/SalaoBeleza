@@ -1,0 +1,16 @@
+<div class="center">
+  <h4 class="flow-text">Gere o código da imagem aqui:</h4>
+  <form [formGroup]="formularioImagem">
+    <div class="row">
+      <div class="col s12 m4 l8">
+        <input style="display: none" type="file" id="imagem" formControlname="caminhoImagem" (change)="onChange($event)" #image>
+      </div>
+    </div>
+    <button class="btn blue" (click)="image.click()">Escolha uma imagem</button><br><br>
+    <button class="btn blue" ngxClipboard [cbContent]="leitorImg.result">Clique para gerar e copiar</button>
+    <p class="flow-text center">{{imgFile?.name}}</p>
+  </form>
+  <div class="codigo quebraLinha">
+    {{leitorImg?.result}}
+  </div>
+</div>

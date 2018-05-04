@@ -1,5 +1,22 @@
-<ul>
-  <li *ngFor="let servico of servicos" >
-    {{servico.nome}}
-  </li>
-</ul>
+<div id="background">
+<br><br>
+ <div id="div2Maior"> 
+ <div class="container" >
+
+  <h3 id="serv">Servicos</h3>
+
+   <br>
+  <div  *ngFor="let servico of servicos" id="backgroundCadaServ" >
+
+   <div  [routerLink]="['/servico', servico.id]" style="margin-left:20px" #service >{{servico.nome}}</div>
+   <div  style="float:left">
+       <img [src]="'./assets/ServicoP/' + servico.Img " >
+   </div>
+   <br>
+   <div>DURAÇÃO: {{servico.tempoM}}HORAS</div>
+
+   <div> Preço: {{servico.Preco}}</div>
+  </div>
+  </div> 
+ </div>
+</div>
