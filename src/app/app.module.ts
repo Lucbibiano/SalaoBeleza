@@ -20,6 +20,7 @@ import { ServicoService } from './shared/servico.service';
 import { GerarImagensComponent } from './gerar-imagens/gerar-imagens.component';
 import { ClipboardModule } from 'ngx-clipboard';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { FormularioComponent } from './agendar/formulario/formulario.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     ListarProfComponent,
     ServicoComponent,
     GerarImagensComponent,
-    NavBarComponent
+    NavBarComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,

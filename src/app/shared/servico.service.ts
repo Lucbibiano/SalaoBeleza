@@ -23,6 +23,5 @@ export class ServicoService {
   profissionais(): Observable<Profissionais[]> {
     return this.http.get(`${SALAO_API}/Profissionais`)
       .map(response => response.json());
-
   }
 }
