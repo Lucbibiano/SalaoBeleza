@@ -1,33 +1,46 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { ServicosComponent } from './servicos/servicos.component';
-
-
 import { MaterializeModule } from 'angular2-materialize';
+import 'materialize-css';
+import {ReactiveFormsModule, FormsModule} from '@angular/forms'
 
+import { ServicosComponent } from './servicos/servicos.component';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import { ServicoService } from './shared/servico.service';
+import { HomeComponent } from './home/home.component';
+import { SobreComponent } from './sobre/sobre.component';
 import { ProfissionaisComponent } from './profissionais/profissionais.component';
+import { AgendarComponent } from './agendar/agendar.component';
+import { AppRoutingModule } from './app.routing.module';
 import { ListarProfComponent } from './profissionais/listar-prof/listar-prof.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-
+import { ServicoprestadoService } from './servicos/servicosprestados.service';
+import { ServicoComponent } from './servicos/servico/servico.component';
+import { ServicoService } from './shared/servico.service';
+import { GerarImagensComponent } from './gerar-imagens/gerar-imagens.component';
+import { ClipboardModule } from 'ngx-clipboard';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
+    SobreComponent,
     ServicosComponent,
     ProfissionaisComponent,
+    AgendarComponent,
     ListarProfComponent,
-    NavBarComponent
+    ServicoComponent,
+    GerarImagensComponent
   ],
   imports: [
-    MaterializeModule,
     BrowserModule,
-    HttpModule
+    AppRoutingModule,
+    HttpModule,
+    ReactiveFormsModule,
+    ClipboardModule,
+    FormsModule
   ],
-  providers: [ServicoService],
+  providers: [ServicoprestadoService, ServicoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
