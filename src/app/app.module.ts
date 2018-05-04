@@ -5,16 +5,15 @@ import { MaterializeModule } from 'angular2-materialize';
 import 'materialize-css';
 import {ReactiveFormsModule, FormsModule} from '@angular/forms'
 
-
+import { ServicosComponent } from './servicos/servicos.component';
+import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SobreComponent } from './sobre/sobre.component';
-import { ServicosComponent } from './servicos/servicos.component';
 import { ProfissionaisComponent } from './profissionais/profissionais.component';
 import { AgendarComponent } from './agendar/agendar.component';
 import { AppRoutingModule } from './app.routing.module';
 import { ListarProfComponent } from './profissionais/listar-prof/listar-prof.component';
-import { HttpModule } from '@angular/http';
 import { ServicoprestadoService } from './servicos/servicosprestados.service';
 import { ServicoComponent } from './servicos/servico/servico.component';
 import { ServicoService } from './shared/servico.service';
