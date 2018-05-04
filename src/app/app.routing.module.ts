@@ -1,5 +1,3 @@
-
-
 import { SobreComponent } from "./sobre/sobre.component";
 import { ServicosComponent } from "./servicos/servicos.component";
 import { HomeComponent } from "./home/home.component";
@@ -24,7 +22,6 @@ const routing: Routes = [
      },
      { path:'servico/:id', component: ServicoComponent, 
 
-            
     },
     { path:'home', component: HomeComponent,
     

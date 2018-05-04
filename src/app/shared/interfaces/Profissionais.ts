@@ -10,5 +10,6 @@ export class Profissionais{
     "NumeroCasa": string;
     "Usuario": string;
     "Senha": string;
+    "Masculino": number; //Verificar Sexo
     "Imagem": string;
 }
