@@ -2,315 +2,291 @@
     "Profissionais": [
         {
             "id": 1,
-            "Nome": "Bruna Ahmad",
-            "CPF": "06145667724",
-            "Idade": 37,
-            "RG": "276833623",
-            "CEP": "83173866",
+            "Nome": "@Bruna Hassan",
+            "CPF": "77232085563",
+            "Idade": 31,
+            "RG": "876212216",
+            "CEP": "64247336",
             "Formacao": [
-                " Tecnologia da Informação ",
-                " Redes "
+                " Analise de Sistemas ",
+                " Tecnologia da Informação "
             ],
-            "Telefone": 11935252766,
-            "NumeroCasa": " 16",
-            "Usuario": "Bruna Ahmad",
-            "Senha": "Bruna Ahmad",
-            "Masculino":0,
-            "Imagem": "assets/ProfCli/image(1)"
+            "Telefone": 11923720753,
+            "NumeroCasa": " 73",
+            "Usuario": "Bruna Hassan",
+            "Tipo": "1",
+            "Senha": "Bruna Hassan",
+            "Imagem": ""
         },
         {
             "id": 2,
-            "Nome": "Livia Silva",
-            "CPF": "73776637837",
-            "Idade": 27,
-            "RG": "525823252",
-            "CEP": "38017725",
+            "Nome": "@Lucas Amaral",
+            "CPF": "60333243046",
+            "Idade": 18,
+            "RG": "252378688",
+            "CEP": "41865765",
             "Formacao": [
-                " Sistemas da Informação ",
-                " Tecnologia da Informação "
+                " Tecnologia da Informação ",
+                " Sistemas da Informação "
             ],
-            "Telefone": 11912236468,
-            "NumeroCasa": " 85",
-            "Usuario": "Livia Silva",
-            "Masculino":0,
-            "Senha": "Livia Silva",
-            "Imagem": "assets/ProfCli/image (2)"
+            "Telefone": 11927705415,
+            "NumeroCasa": " 68",
+            "Usuario": "Lucas Amaral",
+            "Tipo": "1",
+            "Senha": "Lucas Amaral",
+            "Imagem": ""
         },
         {
             "id": 3,
-            "Nome": "Eduarda Hashid",
-            "CPF": "53731018616",
-            "Idade": 25,
-            "RG": "075378524",
-            "CEP": "25686287",
+            "Nome": "@Bruno Hassan",
+            "CPF": "41013433007",
+            "Idade": 26,
+            "RG": "088653827",
+            "CEP": "13672218",
             "Formacao": [
-                " Sistemas da Informação ",
-                " Ciência da Computação "
+                " Engenharia da Computação ",
+                " Tecnologia da Informação "
             ],
-            "Telefone": 11921223552,
-            "NumeroCasa": " 71",
-            "Usuario": "Eduarda Hashid",
-            "Masculino":0,
-            "Senha": "Eduarda Hashid",
-            "Imagem": "assets/ProfCli/image (3)"
+            "Telefone": 11931382721,
+            "NumeroCasa": " 23",
+            "Usuario": "Bruno Hassan",
+            "Tipo": "1",
+            "Senha": "Bruno Hassan",
+            "Imagem": ""
         },
         {
             "id": 4,
-            "Nome": "Olivia Amaral",
-            "CPF": "56205880838",
-            "Idade": 28,
-            "RG": "551143805",
-            "CEP": "81021564",
+            "Nome": "@Gustavo Hassan",
+            "CPF": "56282451283",
+            "Idade": 37,
+            "RG": "526746867",
+            "CEP": "70405623",
             "Formacao": [
-                " Sistemas da Informação ",
-                " Ciência da Computação "
+                " Redes ",
+                " Sistemas da Informação "
             ],
-            "Telefone": 11950515572,
-            "NumeroCasa": " 44",
-            "Usuario": "Olivia Amaral",
-            "Masculino":0,
-            "Senha": "Olivia Amaral",
-            "Imagem": "assets/ProfCli/image (5)"
+            "Telefone": 11976182433,
+            "NumeroCasa": " 61",
+            "Usuario": "Gustavo Hassan",
+            "Tipo": "1",
+            "Senha": "Gustavo Hassan",
+            "Imagem": ""
         },
         {
             "id": 5,
-            "Nome": "Matheus Sousa",
-            "CPF": "26674052666",
-            "Idade": 36,
-            "RG": "834564341",
-            "CEP": "53833444",
+            "Nome": "@Matheus Oliveira",
+            "CPF": "20637737645",
+            "Idade": 29,
+            "RG": "310703764",
+            "CEP": "18338280",
             "Formacao": [
-                " Redes ",
+                " Engenharia da Computação ",
                 " Ciência da Computação "
             ],
-            "Telefone": 11932260226,
-            "NumeroCasa": " 08",
-            "Usuario": "Matheus Sousa",
-            "Masculino":1,
-            "Senha": "Matheus Sousa",
-            "Imagem": "assets/ProfCli/image (4)"
+            "Telefone": 11967707716,
+            "NumeroCasa": " 71",
+            "Usuario": "Matheus Oliveira",
+            "Tipo": "1",
+            "Senha": "Matheus Oliveira",
+            "Imagem": ""
         },
         {
             "id": 6,
-            "Nome": "Pedro Costa",
-            "CPF": "62464384375",
-            "Idade": 36,
-            "RG": "473777802",
-            "CEP": "38526811",
+            "Nome": "@Matheus Arsenio",
+            "CPF": "70812543575",
+            "Idade": 23,
+            "RG": "814534664",
+            "CEP": "55740700",
             "Formacao": [
-                " Engenharia da Computação ",
-                " Ciência da Computação "
+                " Analise de Sistemas ",
+                " Tecnologia da Informação "
             ],
-            "Telefone": 11931481701,
-            "NumeroCasa": " 42",
-            "Usuario": "Pedro Costa",
-            "Masculino":1,
-            "Senha": "Pedro Costa",
-            "Imagem": "assets/ProfCli/image (8)"
+            "Telefone": 11931043141,
+            "NumeroCasa": " 85",
+            "Usuario": "Matheus Arsenio",
+            "Tipo": "1",
+            "Senha": "Matheus Arsenio",
+            "Imagem": ""
         },
         {
             "id": 7,
-            "Nome": "Gustavo Domingues",
-            "CPF": "74043756007",
-            "Idade": 37,
-            "RG": "681611536",
-            "CEP": "45052870",
+            "Nome": "@Livia Ahmad",
+            "CPF": "17377347844",
+            "Idade": 25,
+            "RG": "065813771",
+            "CEP": "41778136",
             "Formacao": [
                 " Engenharia da Computação ",
-                " Analise de Sistemas "
+                " Ciência da Computação "
             ],
-            "Telefone": 11965831686,
-            "NumeroCasa": " 60",
-            "Usuario": "Gustavo Domingues",
-            "Masculino":1,
-            "Senha": "Gustavo Domingues",
-            "Imagem": "assets/ProfCli/image (7)"
+            "Telefone": 11965747320,
+            "NumeroCasa": " 03",
+            "Usuario": "Livia Ahmad",
+            "Tipo": "1",
+            "Senha": "Livia Ahmad",
+            "Imagem": ""
         },
         {
             "id": 8,
-            "Nome": "Livia Sousa",
-            "CPF": "77154750123",
-            "Idade": 39,
-            "RG": "311002348",
-            "CEP": "10074360",
+            "Nome": "@Gustavo Silva",
+            "CPF": "58350731113",
+            "Idade": 28,
+            "RG": "855631004",
+            "CEP": "47223284",
             "Formacao": [
-                " Tecnologia da Informação ",
-                " Ciência da Computação "
+                " Analise de Sistemas ",
+                " Redes "
             ],
-            "Telefone": 11986618745,
-            "NumeroCasa": " 85",
-            "Usuario": "Livia Sousa",
-            "Masculino":0,
-            "Senha": "Livia Sousa",
-            "Imagem": "assets/ProfCli/image (6)"
+            "Telefone": 11915324383,
+            "NumeroCasa": " 05",
+            "Usuario": "Gustavo Silva",
+            "Tipo": "1",
+            "Senha": "Gustavo Silva",
+            "Imagem": ""
         },
         {
             "id": 9,
-            "Nome": "Gustavo Ahmad",
-            "CPF": "55313177163",
-            "Idade": 27,
-            "RG": "655641040",
-            "CEP": "85014884",
+            "Nome": "@Lucas Ahmad",
+            "CPF": "53578707752",
+            "Idade": 21,
+            "RG": "003612016",
+            "CEP": "43281561",
             "Formacao": [
-                " Engenharia da Computação ",
-                " Sistemas da Informação "
+                " Analise de Sistemas ",
+                " Tecnologia da Informação "
             ],
-            "Telefone": 11957603761,
-            "NumeroCasa": " 64",
-            "Usuario": "Gustavo Ahmad",
-            "Masculino":1,
-            "Senha": "Gustavo Ahmad",
-            "Imagem": "assets/ProfCli/image (9)"
+            "Telefone": 11916767226,
+            "NumeroCasa": " 31",
+            "Usuario": "Lucas Ahmad",
+            "Tipo": "1",
+            "Senha": "Lucas Ahmad",
+            "Imagem": ""
         },
         {
             "id": 10,
-            "Nome": "Bruno Domingues",
-            "CPF": "85302628277",
-            "Idade": 31,
-            "RG": "534577207",
-            "CEP": "40843880",
+            "Nome": "@Livia Ahmad",
+            "CPF": "81213172027",
+            "Idade": 19,
+            "RG": "212238776",
+            "CEP": "78117725",
             "Formacao": [
-                " Sistemas da Informação ",
+                " Analise de Sistemas ",
                 " Redes "
             ],
-            "Telefone": 11946385680,
-            "NumeroCasa": " 56",
-            "Usuario": "Bruno Domingues",
-            "Masculino":1,
-            "Senha": "Bruno Domingues",
-            "Imagem": "assets/ProfCli/image (11)"
-        }
-    ],
-    "ADM": [
-        {
-            "id": 1,
-            "usuario": "Felipe",
-            "email": "Felipe@teste.com",
-            "senha": "Felipe@teste.com"
+            "Telefone": 11951313756,
+            "NumeroCasa": " 41",
+            "Usuario": "Livia Ahmad",
+            "Tipo": "1",
+            "Senha": "Livia Ahmad",
+            "Imagem": ""
         }
     ],
     "Clientes": [
         {
             "id": 1,
-            "nome": " Livia Amaral",
-            "CPF": " 02632443177",
-            "CEP": "02038610",
-            "usuario": "Livia Amaral",
-            "Masculino":0,
-            "senha": "Livia Amaral",
-            "imagem": "assets/ProfCli/image (10)"
+            "nome": " Eduarda Bibiano",
+            "CPF": " 25212177155",
+            "CEP": "62541270",
+            "usuario": "Eduarda Bibiano",
+            "senha": "Eduarda Bibiano",
+            "imagem": ""
         },
         {
             "id": 2,
-            "nome": "Eduarda Oliveira",
-            "CPF": " 87034333784",
-            "CEP": "77754581",
-            "Masculino":0,
-            "usuario": "Eduarda Oliveira",
-            "senha": "Eduarda Oliveira",
-            "imagem": "assets/ProfCli/image (12)"
+            "nome": " Eduarda Bibiano",
+            "CPF": " 04746540382",
+            "CEP": "78455536",
+            "usuario": "Eduarda Bibiano",
+            "senha": "Eduarda Bibiano",
+            "imagem": ""
         },
         {
             "id": 3,
-            "nome": " Livia Ahmad",
-            "CPF": " 63556360336",
-            "CEP": "18642605",
-            "usuario": "Livia Ahmad",
-            "senha": "Livia Ahmad",
-            "imagem": "assets/ProfCli/image (13)"
+            "nome": " Matheus Ahmad",
+            "CPF": " 48551233255",
+            "CEP": "34034707",
+            "usuario": "Matheus Ahmad",
+            "senha": "Matheus Ahmad",
+            "imagem": ""
         },
         {
             "id": 4,
-            "nome": " Eduarda Costa",
-            "CPF": " 02420642436",
-            "CEP": "71176266",
-            "usuario": "Eduarda Costa",
-            "senha": "Eduarda Costa",
-            "imagem": "assets/ProfCli/image (14)"
+            "nome": " Olivia Hassan",
+            "CPF": " 47142501485",
+            "CEP": "63037221",
+            "usuario": "Olivia Hassan",
+            "senha": "Olivia Hassan",
+            "imagem": ""
         },
         {
             "id": 5,
-            "nome": " Lucas Costa",
-            "CPF": " 47483625816",
-            "CEP": "65054446",
-            "usuario": "Lucas Costa",
-            "senha": "Lucas Costa",
-            "imagem": "assets/ProfCli/image (15)"
+            "nome": " Lucas Hassan",
+            "CPF": " 33731872832",
+            "CEP": "87241336",
+            "usuario": "Lucas Hassan",
+            "senha": "Lucas Hassan",
+            "imagem": ""
         },
         {
             "id": 6,
-            "nome": " Eduarda Sousa",
-            "CPF": " 03736502564",
-            "CEP": "18764256",
-            "usuario": "Eduarda Sousa",
-            "senha": "Eduarda Sousa",
-            "imagem": "assets/ProfCli/image (16)"
+            "nome": " Gustavo Hassan",
+            "CPF": " 16347256076",
+            "CEP": "74343071",
+            "usuario": "Gustavo Hassan",
+            "senha": "Gustavo Hassan",
+            "imagem": ""
         },
         {
             "id": 7,
-            "nome": " Eduarda Silva",
-            "CPF": " 82371664664",
-            "CEP": "50534643",
-            "usuario": "Eduarda Silva",
-            "senha": "Eduarda Silva",
-            "imagem": "assets/ProfCli/image (17)"
+            "nome": " Bruno Domingues",
+            "CPF": " 60116346255",
+            "CEP": "28020377",
+            "usuario": "Bruno Domingues",
+            "senha": "Bruno Domingues",
+            "imagem": ""
         },
         {
             "id": 8,
-            "nome": " Lucas Domingues",
-            "CPF": " 80334506182",
-            "CEP": "11804575",
-            "usuario": "Lucas Domingues",
-            "senha": "Lucas Domingues",
-            "imagem": "assets/ProfCli/image (18)"
+            "nome": " Bruna Ahmad",
+            "CPF": " 41227630303",
+            "CEP": "17120431",
+            "usuario": "Bruna Ahmad",
+            "senha": "Bruna Ahmad",
+            "imagem": ""
         },
         {
             "id": 9,
-            "nome": " Olivia Domingues",
-            "CPF": " 50247450782",
-            "CEP": "33576441",
-            "usuario": "Olivia Domingues",
-            "senha": "Olivia Domingues",
-            "imagem": "assets/ProfCli/image (19)"
+            "nome": " Matheus Costa",
+            "CPF": " 72461452274",
+            "CEP": "36450771",
+            "usuario": "Matheus Costa",
+            "senha": "Matheus Costa",
+            "imagem": ""
         },
         {
             "id": 10,
-            "nome": " Matheus Ahmad",
-            "CPF": " 71013263726",
-            "CEP": "61281188",
-            "usuario": "Matheus Ahmad",
-            "senha": "Matheus Ahmad",
-            "imagem": "assets/ProfCli/image (20)"
+            "nome": " Mohamed Hassan",
+            "CPF": " 72600205477",
+            "CEP": "78831423",
+            "usuario": "Mohamed Hassan",
+            "senha": "Mohamed Hassan",
+            "imagem": ""
         }
     ],
     "Servicos": [
         {
             "id": 1,
             "nome": "unhas",
-            "tempoM": 1,
-            "Preco": 20,
-            "Img": "unha.jpg"
-        },
-        {
-            "id": 2,
-            "nome": "escova progressiva",
-            "tempoM": 5,
-            "Preco": 70,
-            "Img": "escProg.jpg"
-        },
-        {
-            "id": 3,
-            "nome": "hidratação",
-            "tempoM": 3,
+            "tempoM": 5.5,
             "Preco": 50,
-            "Img": "Hidratacao.jpg"
+            "Img": ""
         }
     ],
     "Aval": [
         {
             "id_Prof": null,
             "id_Cli": "",
-            "Descricao":"",
+            "Descricao":"" ,
             "nota": 3
         }
     ],
@@ -320,7 +296,7 @@
             "id_Prof": "" ,
             "id_Cli": "" ,
             "data_horario": "",
-            "id_Serv": "~/."
+            "id_Serv": ""
         }
     ]
 }
