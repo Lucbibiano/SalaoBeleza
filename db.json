@@ -277,7 +277,21 @@
         {
             "id": 1,
             "nome": "unhas",
-            "tempoM": 5.5,
+            "tempoM": 1,
+            "Preco": 20,
+            "Img": "unha.jpg"
+        },
+        {
+            "id": 2,
+            "nome": "escova progressiva",
+            "tempoM": 5,
+            "Preco": 70,
+            "Img": "escProg.jpg"
+        },
+        {
+            "id": 3,
+            "nome": "hidratacao",
+            "tempoM": 3,
             "Preco": 50,
             "Img": ""
         }

@@ -19,6 +19,8 @@ import { ServicoComponent } from './servicos/servico/servico.component';
 import { ServicoService } from './shared/servico.service';
 import { GerarImagensComponent } from './gerar-imagens/gerar-imagens.component';
 import { ClipboardModule } from 'ngx-clipboard';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { ClipboardModule } from 'ngx-clipboard';
     AgendarComponent,
     ListarProfComponent,
     ServicoComponent,
-    GerarImagensComponent
+    GerarImagensComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
