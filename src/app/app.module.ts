@@ -21,6 +21,7 @@ import { GerarImagensComponent } from './gerar-imagens/gerar-imagens.component';
 import { ClipboardModule } from 'ngx-clipboard';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FormularioComponent } from './agendar/formulario/formulario.component';
+import { RemoveAtPipe } from './shared/custom-pipes/removeAT.pipe';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { FormularioComponent } from './agendar/formulario/formulario.component';
     ServicoComponent,
     GerarImagensComponent,
     NavBarComponent,
-    FormularioComponent
+    FormularioComponent, 
+    RemoveAtPipe
   ],
   imports: [
     BrowserModule,
