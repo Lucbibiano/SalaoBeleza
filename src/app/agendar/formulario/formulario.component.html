@@ -1,5 +1,19 @@
 <div class="container">
-  <form formGroup="formularioAgendar">
-      <label></label><input type="text">
-  </form>
-</div>
+  <div class="row center">
+    <h2 *ngIf="!selectedProf">Selecione o funcionário</h2>
+    <div class="blocoInf col l4 s12" *ngFor="let profissional of profissionais">
+      <app-listar-prof [profissional]="profissional" (selecionado)="setName($event)" *ngIf="!selectedProf"></app-listar-prof>
+    </div>
+    <div class=" col l4 s6" *ngIf="selectedProf && !selectedDate">
+      <input type="date"  #calendario>
+      <button (click)="selectData(calendario.value)">Selecionar data</button>
+    </div>
+    <div class=" col l4 s6" *ngIf="selectedProf && selectedDate && !selectedTime">
+      <input type="time" #horario>
+      <button (click)="selectTime(horario.value)">Selecionar data</button>
+    </div>
+  </div>
+  <div *ngIf="selectedProf && selectedDate && selectedTime">
+    Funcionário selecionado:{{selectedProf.Nome | removeAT}}, irá realizar o serviço de: 'Algum servico'
+    <br> no dia {{selectedDate | date[short]}} às {{selectedTime}}
+  </div>

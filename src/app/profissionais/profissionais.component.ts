@@ -9,8 +9,9 @@ import { Profissionais } from '../shared/interfaces/Profissionais';
   styleUrls: ['./profissionais.component.css']
 })
 export class ProfissionaisComponent implements OnInit {
-  showSelected: string;
+  showSelected: Profissionais;
   profissionais: Profissionais[]
+  letra: string;
   @ViewChild('showSelect') public showSelect: ElementRef;
 
   constructor(private servicoService: ServicoService) { }
@@ -20,13 +21,13 @@ export class ProfissionaisComponent implements OnInit {
   }
   setName(selectedProfissional: Profissionais) {
     this.moverAteCabecalho();
-    let letra: string;
+    console.log(selectedProfissional);
     if (selectedProfissional.Masculino) {
-      letra = "o";
+      this.letra = "o";
     } else {
-      letra = "a";
+      this.letra = "a";
     }
-    this.showSelected = "" + letra.toUpperCase() + " profissional " + selectedProfissional.Nome + " foi selecionad" + letra.toLowerCase();
+    this.showSelected = selectedProfissional;
   }
 
   moverAteCabecalho() {
