@@ -298,19 +298,49 @@
     ],
     "Aval": [
         {
-            "id_Prof": null,
-            "id_Cli": "",
-            "Descricao":"" ,
+            "Avaliador.id_Cli": 2,
+            "Avaliador.id_Prof": null,
+            "Avaliado.id_Agendado": 1,
+            "id_Servico": 1,
+            "Descricao": "Fenomenal",
+            "nota": 9
+        },
+        {
+            "Avaliador.id_Cli": 6,
+            "Avaliador.id_Prof": null,
+            "Avaliado.id_Agendado": 2,
+            "Descricao": "Lixo",
             "nota": 3
+        },
+        {
+            "Avaliador.id_Cli": 5,
+            "Avaliador.id_Prof": null,
+            "Avaliado.id_Agendado": 3,
+            "Descricao": "Bom corte",
+            "nota": 6
         }
     ],
     "Agendados": [
         {
-            "id": "" ,
-            "id_Prof": "" ,
-            "id_Cli": "" ,
+            "id": 1,
+            "id_Prof": 3,
+            "id_Cli": 2,
             "data_horario": "",
-            "id_Serv": ""
+            "id_Serv": 1
+        },
+        {
+            "id": 2,
+            "id_Prof": 3,
+            "id_Cli": 6,
+            "data_horario": "",
+            "id_Serv": 2
+        },
+        {
+            "id": 3,
+            "id_Prof": 3,
+            "id_Cli": 5,
+            "data_horario": "",
+            "id_Serv": 3
         }
     ]
 }
