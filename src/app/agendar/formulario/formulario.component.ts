@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServicoService } from '../../shared/servico.service';
 import { Profissionais } from '../../shared/interfaces/Profissionais';
 import { Servicos } from '../../shared/interfaces/servicos';
+import { RemoveAtPipe } from '../../shared/custom-pipes/removeAT.pipe';
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
@@ -9,21 +10,25 @@ import { Servicos } from '../../shared/interfaces/servicos';
 })
 export class FormularioComponent implements OnInit {
   profissionais: Profissionais[];
-  servicos: Servicos[];
+  servicos: any[];
   selectedProf: any;
   selectedDate: any;
   selectedTime: any;
   selectedServ: Servicos;
-  id_procurar:any;
-  
+  id_procurar: any;
+
   constructor(private servicoService: ServicoService) {
 
   }
-  ngOnInit() {
-    this.servicoService.profissionais().subscribe(profissional => this.profissionais = profissional);
-    this.servicoService.servicos().subscribe(servicos => this.pegarServico(servicos));
-  }
+  async ngOnInit() {
+    this.pegarServico(await this.servicoService.servicos());
+    this.pegarProfissional(await this.servicoService.profissionais());
 
+
+  }
+  pegarProfissional(x) {
+    this.profissionais = x;
+  }
   pegarServico(x) {
     this.servicos = x;
   }
@@ -51,9 +56,15 @@ export class FormularioComponent implements OnInit {
   }
 
 
-  mudou(id:number) {
-    this.id_procurar = id;  
-    this.selectedServ = this.servicos.filter(servico=> servico.id === +this.id_procurar )[0];
-    console.log("servico selecionado: "+ this.selectedServ.nome)
+  mudouServico(id: number) {
+    this.id_procurar = id;
+    this.selectedServ = this.servicos.filter(servico => servico.id === +this.id_procurar)[0];
+    console.log("servico selecionado: " + this.selectedServ.nome)
+  }
+  mudouProfissional(id: number) {
+    this.id_procurar = id;
+    console.log(this.id_procurar);
+    this.selectedProf = this.profissionais.filter(profissional => profissional.id === +this.id_procurar)[0];
+    console.log("Profissional selecionado: " + this.selectedProf.Nome);
   }
 }
