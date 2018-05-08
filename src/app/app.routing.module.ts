@@ -8,6 +8,7 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { ServicoComponent } from "./servicos/servico/servico.component";
 import { GerarImagensComponent } from "./gerar-imagens/gerar-imagens.component";
+import { UsuariosComponent } from "./cadastros/usuarios/usuarios.component";
 
 
 const routing: Routes = [
@@ -17,6 +18,9 @@ const routing: Routes = [
      },
     { path:'sobre', component: SobreComponent,
 
+     },
+     {
+      path:"cadastroUser", component: UsuariosComponent
      },
     { path:'servicos', component: ServicosComponent,
        

@@ -22,6 +22,9 @@ import { ClipboardModule } from 'ngx-clipboard';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FormularioComponent } from './agendar/formulario/formulario.component';
 import { RemoveAtPipe } from './shared/custom-pipes/removeAT.pipe';
+import { UsuariosComponent } from './cadastros/usuarios/usuarios.component';
+import { CadastroService } from './cadastros/cadastro.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -37,17 +40,19 @@ import { RemoveAtPipe } from './shared/custom-pipes/removeAT.pipe';
     GerarImagensComponent,
     NavBarComponent,
     FormularioComponent, 
-    RemoveAtPipe
+    RemoveAtPipe, 
+    UsuariosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpModule,
+    HttpClientModule,
     ReactiveFormsModule,
     ClipboardModule,
     FormsModule
   ],
-  providers: [ServicoprestadoService, ServicoService],
+  providers: [ServicoprestadoService, CadastroService, ServicoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
