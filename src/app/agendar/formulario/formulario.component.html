@@ -1,29 +1,40 @@
 <div class="container">
   <div class="row center">
-    <h2></h2>
-    <select>
-      <option value=""> Selecione um servico</option>
-      <option *ngFor="let x of servicos" [value]="x.id" [selected]="selectedServ == x">{{x.nome}}</option>
-     </select>
-    
 
-    <h2 *ngIf="selectedProf">Selecione o funcionário</h2>
+
+    <h2 *ngIf="!selectedServ">Selecione o serviço</h2>
+    <select class="browser-default" (change)="mudou(valores.value)" *ngIf="!selectedServ" #valores>
+      <option value="" disabled> Selecione um servico</option>
+      <option *ngFor="let servico of servicos" [value]="servico.id">{{servico.nome}}</option>
+    </select>
+
+
+    <h2 *ngIf="selectedServ && !selectedProf">Selecione o funcionário</h2>
     <div class="col l4 s12" *ngFor="let profissional of profissionais">
-      <div>
-        <!--  *ngIf="profissional.Formacao.match(selectedServ.nome)" -->
-        <app-listar-prof [profissional]="profissional" (selecionado)="setName($event)" *ngIf="!selectedProf"></app-listar-prof>
+      <div *ngIf="selectedServ && !selectedProf">
+        <app-listar-prof [profissional]="profissional" (selecionado)="setProf($event)" *ngIf="!selectedProf"></app-listar-prof>
       </div>
     </div>
+
+
     <div class=" col l4 s6" *ngIf="selectedProf && !selectedDate">
       <input type="date" #calendario>
       <button (click)="selectData(calendario.value)">Selecionar data</button>
     </div>
+
+
     <div class=" col l4 s6" *ngIf="selectedDate && !selectedTime">
       <input type="time" #horario>
       <button (click)="selectTime(horario.value)">Selecionar data</button>
     </div>
+
+
   </div>
+
   <div *ngIf=" selectedTime">
-    Funcionário selecionado:{{selectedProf.Nome | removeAT}}, irá realizar o serviço de: 'Algum servico'
+    Funcionário selecionado:{{selectedProf.Nome | removeAT}}, irá realizar o serviço de:{{selectedServ.nome}}
     <br> no dia {{selectedDate | date}} às {{selectedTime}}
+
   </div>
+
+</div>

@@ -9,22 +9,29 @@ import { Servicos } from '../../shared/interfaces/servicos';
 })
 export class FormularioComponent implements OnInit {
   profissionais: Profissionais[];
-  servicos:Servicos[];
+  servicos: Servicos[];
   selectedProf: any;
   selectedDate: any;
   selectedTime: any;
-  selectedServ:Servicos;
+  selectedServ: Servicos;
+  id_procurar:any;
+  
   constructor(private servicoService: ServicoService) {
 
   }
-
   ngOnInit() {
     this.servicoService.profissionais().subscribe(profissional => this.profissionais = profissional);
-    this.servicoService.servicos().subscribe(servicos => this.servicos = servicos);
+    this.servicoService.servicos().subscribe(servicos => this.pegarServico(servicos));
   }
-  setName(profissionalSelecionado: Profissionais) {
+
+  pegarServico(x) {
+    this.servicos = x;
+  }
+
+  setProf(profissionalSelecionado: Profissionais) {
     this.selectedProf = profissionalSelecionado;
   }
+
   selectData(data) {
     console.log(data);
     if (data != undefined && data) {
@@ -38,8 +45,15 @@ export class FormularioComponent implements OnInit {
     console.log(time);
     if (time != undefined && time) {
       this.selectedTime = time;
-      }else{
-        alert("horário inválido")
-      }
+    } else {
+      alert("horário inválido")
+    }
+  }
+
+
+  mudou(id:number) {
+    this.id_procurar = id;  
+    this.selectedServ = this.servicos.filter(servico=> servico.id === +this.id_procurar )[0];
+    console.log("servico selecionado: "+ this.selectedServ.nome)
   }
 }
