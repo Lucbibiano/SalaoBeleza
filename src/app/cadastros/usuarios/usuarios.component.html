@@ -1,0 +1,94 @@
+<div class="container">
+  <h1 class="flow-text center">Cadastro de usuários</h1>
+  <div class="row">
+    <div class="col l4 s12">
+      <select #tipo name="tipoCadastro" class="browser-default">
+        <option value=0 selected disabled>Escolha o tipo do cadastro</option>
+        <option value=1>Cliente</option>
+        <option value=2>Funcionário</option>
+        <option value=3>Administrador</option>
+      </select>
+      <button class="btn blue" (click)="abrirForm(tipo.value)">Abrir</button>
+    </div>
+
+    <form [hidden]="escolha == 0" [formGroup]="cadastroUsuario">
+
+      <div class="col l4 s12">
+        <label class="lead">Nome:</label>
+        <input class="form-control" type="text" formControlName="nome" autocomplete="off" placeholder="Seu nome">
+      </div>
+
+      <div class="col l4 s12">
+        <label class="lead">CPF:</label>
+        <input class="form-control" type="text" formControlName="cpf" autocomplete="off" placeholder="CPF">
+      </div>
+
+      <div class="col l4 s12">
+        <label class="lead">Usuario:</label>
+        <!-- <p>consultar dinamicamente com diretivas</p> -->
+        <input class="form-control" type="text" formControlName="usuario" autocomplete="off" placeholder="Usuário">
+      </div>
+
+      <div class="col l4 s12">
+        <label class="lead">CEP:</label>
+        <input class="form-control" type="text" formControlName="cep" autocomplete="off" placeholder="CEP">
+      </div>
+
+      <div class="col l4 s12">
+        <label class="lead">Senha:</label>
+        <input class="form-control" type="text" formControlName="senha" autocomplete="off" placeholder="Senha">
+      </div>
+
+      <!-- <label class="lead">Confirma Senha:</label> -->
+      <!-- <input class="form-control" type="text" autocomplete="off" placeholder="Confirme a senha">  -->
+      <!-- <div [hidden]="teste"> -->
+      <div *ngIf="tipo.value == 2">
+        <div class="col l4 s12">
+          <label class="lead">Formação:</label>
+          <input class="form-control" type="text" formControlName="formacao" autocomplete="off" placeholder="Formação">
+        </div>
+
+        <div class="col l4 s12">
+          <label class="lead">Tipo:</label>
+          <input class="form-control" type="text" formControlName="tipo" autocomplete="off" placeholder="Tipo">
+        </div>
+
+        <div class="col l4 s12">
+          <label class="lead">Telefone:</label>
+          <input class="form-control" type="text" formControlName="telefone" autocomplete="off" placeholder="Telefone">
+        </div>
+
+        <div class="col l4 s12">
+          <label class="lead">Número da casa</label>
+          <input class="form-control" type="text" formControlName="numeroCasa" autocomplete="off" placeholder="Numéro da casa">
+        </div>
+
+        <div class="col l4 s12">
+          <label class="lead">RG:</label>
+          <input class="form-control" type="text" formControlName="rg" autocomplete="off" placeholder="RG">
+        </div>
+
+        <div class="col l4 s12">
+          <label class="lead">Idade:</label>
+          <input class="form-control" type="text" formControlName="idade" autocomplete="off" placeholder="Idade">
+        </div>
+
+      </div>
+
+      <div class="col l8 s12">
+        <div class="file-field input-field">
+          <div class="btn blue">
+            <span>Imagem</span>
+            <input type="file" class="form-control" formControlName="imagem" autocomplete="off" placeholder="Selecione uma imagem">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text">
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="col l4 s12 center">
+  <button class="btn blue" (click)="addUser(cadastroUsuario.value)">Cadastrar</button>
+</div>
