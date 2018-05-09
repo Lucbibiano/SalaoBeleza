@@ -25,6 +25,7 @@ import { RemoveAtPipe } from './shared/custom-pipes/removeAT.pipe';
 import { UsuariosComponent } from './cadastros/usuarios/usuarios.component';
 import { CadastroService } from './cadastros/cadastro.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CepDiretivaDirective } from './shared/custom-directives/cep-diretiva.directive';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { HttpClientModule } from '@angular/common/http';
     NavBarComponent,
     FormularioComponent, 
     RemoveAtPipe, 
-    UsuariosComponent
+    UsuariosComponent, 
+    CepDiretivaDirective
   ],
   imports: [
     BrowserModule,

@@ -59,6 +59,6 @@ export class UsuariosComponent implements OnInit {
   addUser(usuario: Usuario) {
     usuario.imagem = this.leitorImg.result;
     this.cadastroServ.addUser(usuario);
-    window.location.reload();
+    window.location.reload();,
   }
 }

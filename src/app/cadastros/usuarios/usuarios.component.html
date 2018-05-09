@@ -20,7 +20,7 @@
           <!-- <i class="material-icons erro">error</i> EXIBE O ICONE DE ERRO, MAS DANIFICA A ESTRUTURA DO FORMULÁRIO-->
           <label class="vermelho">* Campo obrigatório</label>
         </span>
-        <input [class.erro]="cadastroUsuario.controls['nome'].invalid" [class.sucesso]="cadastroUsuario.controls['nome'].valid" type="text"
+        <input appCepDiretiva [class.erro]="cadastroUsuario.controls['nome'].invalid" [class.sucesso]="cadastroUsuario.controls['nome'].valid" type="text"
           formControlName="nome" placeholder="Seu nome">
       </div>
 
