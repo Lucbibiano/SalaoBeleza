@@ -14,15 +14,19 @@ export class ServicoService {
   constructor(private http: Http) {
   }
 
-  servicos(): Observable<Servicos[]> {
+  async servicos(): Promise<any[]> {
+    const response = await this.http.get(`${SALAO_API}/Servicos`).toPromise();
 
-    return this.http.get(`${SALAO_API}/Servicos`)
-      .map(response => response.json());
+
+    return response.json();
 
   }
-  profissionais(): Observable<Profissionais[]> {
-    return this.http.get(`${SALAO_API}/Profissionais`)
-      .map(response => response.json());
+  async profissionais(): Promise<any[]> {
+    const response = await this.http.get(`${SALAO_API}/Profissionais`).toPromise();
+
+
+    return response.json();
+
   }
-  
+
 }

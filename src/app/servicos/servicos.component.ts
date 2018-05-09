@@ -15,12 +15,10 @@ export class ServicosComponent implements OnInit {
   seleciona:boolean = false;
   idService:number;
 
-  constructor( private servicoService:ServicoprestadoService, ) { }
+  constructor( private servicoService:ServicoprestadoService) { }
 
   ngOnInit() {
-    
     this.servicoService.servicos().subscribe(servicos => this.servicos = servicos);
-    
 
   }
 

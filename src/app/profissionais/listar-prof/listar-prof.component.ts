@@ -15,10 +15,10 @@ export class ListarProfComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
+    console.log("buildado com o profissional: " + this.profissional.Nome);
   }
-  selecionar(nome){
-    console.log("O Funcionário: "+nome+", foi selecionado(a)");
+  selecionar(nome) {
+    console.log("O Funcionário: " + nome + ", foi selecionado(a)");
     this.selecionado.emit(nome);
   }
 }

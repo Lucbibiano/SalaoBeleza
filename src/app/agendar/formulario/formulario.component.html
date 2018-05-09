@@ -1,5 +1,31 @@
-<div class="container">
-  <form formGroup="formularioAgendar">
-      <label></label><input type="text">
+<div class="row center" style="border: 2px solid black">
+  <h1>Agendamento</h1>
+  <form>
+
+    <div class="col l4 s12">
+      <label class="lead">Selecione o serviço</label>
+      <select class="browser-default" (change)="mudouServico(servicesChoose.value)" #servicesChoose>
+        <option value="" selected disabled> Selecione um servico</option>
+        <option *ngFor="let servico of servicos" [value]="servico.id">{{servico.nome}}</option>
+      </select>
+    </div>
+
+    <div class="col l4 s12">
+      <label class="lead" for="profissionalChoose"> Selecione o profissional </label>
+      <select class="browser-default" (change)="mudouProfissional(profissionalChoose.value);" #profissionalChoose>
+        <option value="" selected disabled> Selecione um profissional</option>
+        <option *ngFor="let profissional of profissionais" [value]="profissional.id">
+          {{ profissional.Nome | removeAT }}
+        </option>
+      </select>
+    </div>
+    <div class="col l2 s12">
+      <label for="calendario">Selecione uma data: </label>
+      <input type="date" [value]="dataAgora" id="calendario" (blur)="selectData(calendario.value)" #calendario>
+    </div>
+    <div class="col l2   s12">
+      <label for="calendario">Selecione um horário: </label>
+      <input type="time" id="relogio" [value]="horaAgora" (blur)="selectTime(relogio.value)" #relogio>
+    </div>
   </form>
 </div>

@@ -9,24 +9,30 @@ import { Profissionais } from '../shared/interfaces/Profissionais';
   styleUrls: ['./profissionais.component.css']
 })
 export class ProfissionaisComponent implements OnInit {
-  showSelected: string;
+  showSelected: Profissionais;
   profissionais: Profissionais[]
+  letra: string;
   @ViewChild('showSelect') public showSelect: ElementRef;
 
   constructor(private servicoService: ServicoService) { }
 
-  ngOnInit() {
-    this.servicoService.profissionais().subscribe(profissionais => this.profissionais = profissionais);
+  async ngOnInit() {
+    this.pegarProfissional(await this.servicoService.profissionais());
+
   }
+  pegarProfissional(x) {
+    this.profissionais = x;
+  }
+  
   setName(selectedProfissional: Profissionais) {
     this.moverAteCabecalho();
-    let letra: string;
+    console.log("Selecionado: "+selectedProfissional);
     if (selectedProfissional.Masculino) {
-      letra = "o";
+      this.letra = "o";
     } else {
-      letra = "a";
+      this.letra = "a";
     }
-    this.showSelected = "" + letra.toUpperCase() + " profissional " + selectedProfissional.Nome + " foi selecionad" + letra.toLowerCase();
+    this.showSelected = selectedProfissional;
   }
 
   moverAteCabecalho() {

@@ -11,5 +11,9 @@ export class AgendarComponent implements OnInit {
 
   ngOnInit() {
   }
+  
+  salvar(){
+    console.log("salvou");
+  }
 
 }
