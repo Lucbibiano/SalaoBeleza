@@ -12,11 +12,11 @@ export class CadastroService{
     profissionais: any;
 
     addUser(usuario: Usuario){
-        if(!usuario.formacao){ // Cliente
+        if(!usuario.servicos){ // Cliente
             this.http.post(`${SALAO_API}/Clientes`, usuario).
             subscribe(retorno => {console.log("Cliente add ", retorno)})
         }
-        else if(usuario.formacao){ // Funcionário
+        else if(usuario.servicos){ // Funcionário
             this.http.post(`${SALAO_API}/Profissionais`, usuario)
             .subscribe(retorno => {console.log("Profissional add", retorno)})
         }

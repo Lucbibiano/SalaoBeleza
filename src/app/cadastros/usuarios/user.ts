@@ -8,7 +8,7 @@ interface Usuario{
     senha: string;
     imagem: string;
     //PROFISSIONAIS
-    formacao?: string;
+    servicos?: string;
     tipo?: number;
     telefone?: number;
     numeroCasa?: number;
