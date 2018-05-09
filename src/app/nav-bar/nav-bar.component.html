@@ -4,7 +4,6 @@
       <img src="../assets/logosalao2.png" style="width:65px; margin-left:650px  ">
     </a>
     <ul class="right hide-on-med-and-down">
-
       <li>
         <a routerLink="/sobre">Sobre </a>
       </li>
@@ -17,7 +16,23 @@
       <li>
         <a routerLink="/servicos">Servicos</a>
       </li>
-      <li>ossw</li>
+      <li>
+        <a class="dropdown-button" materialize="dropdown" href="#!" data-activates="dropdown1">Administração
+          <i class="material-icons right">arrow_drop_down</i>
+        </a>
+      </li>
     </ul>
   </div>
 </nav>
+
+<ul id="dropdown1" class="dropdown-content">
+  <li class="divider"></li>
+  <li>
+    <a routerLink="/cadastroUser">Cadastrar Usuários</a>
+  </li>
+  <li class="divider"></li>
+  <li>
+    <a routerLink="/gerar">Gerar imagem</a>
+  </li>
+  <li class="divider"></li>
+</ul>

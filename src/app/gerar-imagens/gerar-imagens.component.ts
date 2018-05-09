@@ -15,6 +15,7 @@ export class GerarImagensComponent implements OnInit {
   leitorImg = new FileReader();
 
   ngOnInit() {
+
     this.formularioImagem = this.fb.group({
       caminhoImagem: this.fb.control('', [Validators.required])
     })
