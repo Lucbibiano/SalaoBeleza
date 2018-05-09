@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControlName } from '@angular/forms';
+import { FormGroup, Validators, MinLengthValidator, FormControl } from '@angular/forms';
 import { CadastroService } from '../cadastro.service';
 
 @Component({
@@ -9,35 +9,48 @@ import { CadastroService } from '../cadastro.service';
 })
 export class UsuariosComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private cadastroServ: CadastroService) { }
-
   cadastroUsuario: FormGroup;
-  controle: FormControlName;
   escolha: number = 0;
+  usuarioIsValid: boolean = false;
 
-  abrirForm(valor){
-    console.log("Ta dentro");
-    this.escolha = valor;
-    console.log("A escolha é ",this.escolha);
-  }
+  constructor(private cadastroServ: CadastroService) { }
 
   ngOnInit() {
-    this.cadastroUsuario = this.fb.group({
-      nome: this.fb.control(''),
-      cpf: this.fb.control(''),
-      usuario: this.fb.control(''),
-      cep: this.fb.control(''),
-      senha: this.fb.control(''),
-      formacao: this.fb.control(''),
-      tipo: this.fb.control(''),
-      telefone: this.fb.control(''),
-      numeroCasa: this.fb.control(''),
-      rg: this.fb.control(''),
-      imagem: this.fb.control(''),
-      idade: this.fb.control('')
-    })
+    this.criaFormulario();
   }
-  addUser(usuario: Usuario){
+
+  verificaUser(cadastroUsuario) {
+    this.usuarioIsValid =  this.cadastroServ.verificaUser(""+cadastroUsuario.usuario);
+  }
+
+
+  criaFormulario() {
+    this.cadastroUsuario = new FormGroup({
+      nome: new FormControl('', [Validators.required, Validators.minLength(5)]),
+      cpf: new FormControl('', [Validators.required]),
+      usuario: new FormControl('', [Validators.required]),
+      cep: new FormControl('', [Validators.required]),
+      senha: new FormControl('', [Validators.required]),
+      formacao: new FormControl(''),
+      tipo: new FormControl(''),
+      telefone: new FormControl(''),
+      numeroCasa: new FormControl(''),
+      rg: new FormControl(''),
+      imagem: new FormControl(''),
+      idade: new FormControl('')
+    });
+  }
+
+
+
+
+
+  abrirForm(valor) {
+    this.escolha = valor;
+    console.log("A escolha é ", this.escolha);
+  }
+
+  addUser(usuario: Usuario) {
     console.log("user", usuario);
     // this.cadastroServ.addUser(usuario);
   }

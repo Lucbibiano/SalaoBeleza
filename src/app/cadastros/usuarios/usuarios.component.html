@@ -1,94 +1,96 @@
 <div class="container">
   <h1 class="flow-text center">Cadastro de usuários</h1>
   <div class="row">
-    <div class="col l4 s12">
-      <select #tipo name="tipoCadastro" class="browser-default">
+    <div class="col l8 s12">
+      <select #tipo name="tipoCadastro" class="browser-default" (change)="abrirForm(tipo.value)">
         <option value=0 selected disabled>Escolha o tipo do cadastro</option>
         <option value=1>Cliente</option>
         <option value=2>Funcionário</option>
         <option value=3>Administrador</option>
       </select>
-      <button class="btn blue" (click)="abrirForm(tipo.value)">Abrir</button>
     </div>
-
-    <form [hidden]="escolha == 0" [formGroup]="cadastroUsuario">
-
-      <div class="col l4 s12">
+  </div>
+  <div class="row">
+    <form [formGroup]="cadastroUsuario">
+      <!-- [hidden]="escolha == 0" **********************************************************-->
+      <div class="col l6 s12">
         <label class="lead">Nome:</label>
-        <input class="form-control" type="text" formControlName="nome" autocomplete="off" placeholder="Seu nome">
+        <input [class.erro]="cadastroUsuario.controls['nome'].invalid" [class.sucesso]="cadastroUsuario.controls['nome'].valid" type="text"
+          formControlName="nome" placeholder="Seu nome">
       </div>
 
-      <div class="col l4 s12">
+      <div class="col l6 s12">
+        <label class="lead">Usuário:</label>
+        <input class="form-control" type="text" formControlName="usuario" autocomplete="off" placeholder="Usuário" (change)="verificaUser(cadastroUsuario.value)"
+          [class.erro]="cadastroUsuario.controls['usuario'].invalid" [class.erro]="!usuarioIsValid" [class.sucesso]="cadastroUsuario.controls['usuario'].valid">
+      </div>
+      <span class="lead" [hidden]="!usuarioIsValid">Usuario já existe</span>
+      <div class="col l6 s12">
         <label class="lead">CPF:</label>
-        <input class="form-control" type="text" formControlName="cpf" autocomplete="off" placeholder="CPF">
+        <input class="form-control" type="text" formControlName="cpf" autocomplete="off" placeholder="CPF" [class.erro]="cadastroUsuario.controls['cpf'].invalid"
+          [class.sucesso]="cadastroUsuario.controls['cpf'].valid">
+      </div>
+
+      <div class="col l6 s12">
+        <label class="lead">Formação:</label>
+        <input class="form-control" type="text" formControlName="formacao" autocomplete="off" placeholder="Formação" [class.erro]="cadastroUsuario.controls['formacao'].invalid"
+          [class.sucesso]="cadastroUsuario.controls['formacao'].valid">
       </div>
 
       <div class="col l4 s12">
-        <label class="lead">Usuario:</label>
-        <!-- <p>consultar dinamicamente com diretivas</p> -->
-        <input class="form-control" type="text" formControlName="usuario" autocomplete="off" placeholder="Usuário">
+        <label class="lead">RG:</label>
+        <input class="form-control" type="text" formControlName="rg" autocomplete="off" placeholder="RG" [class.erro]="cadastroUsuario.controls['rg'].invalid"
+          [class.sucesso]="cadastroUsuario.controls['rg'].valid">
       </div>
 
       <div class="col l4 s12">
-        <label class="lead">CEP:</label>
-        <input class="form-control" type="text" formControlName="cep" autocomplete="off" placeholder="CEP">
+        <label class="lead">Idade:</label>
+        <input class="form-control" type="text" formControlName="idade" autocomplete="off" placeholder="Idade" [class.erro]="cadastroUsuario.controls['idade'].invalid"
+          [class.sucesso]="cadastroUsuario.controls['idade'].valid">
       </div>
 
-      <div class="col l4 s12">
-        <label class="lead">Senha:</label>
-        <input class="form-control" type="text" formControlName="senha" autocomplete="off" placeholder="Senha">
-      </div>
-
-      <!-- <label class="lead">Confirma Senha:</label> -->
-      <!-- <input class="form-control" type="text" autocomplete="off" placeholder="Confirme a senha">  -->
-      <!-- <div [hidden]="teste"> -->
-      <div *ngIf="tipo.value == 2">
-        <div class="col l4 s12">
-          <label class="lead">Formação:</label>
-          <input class="form-control" type="text" formControlName="formacao" autocomplete="off" placeholder="Formação">
-        </div>
-
-        <div class="col l4 s12">
-          <label class="lead">Tipo:</label>
-          <input class="form-control" type="text" formControlName="tipo" autocomplete="off" placeholder="Tipo">
-        </div>
-
+      <!-- <div *ngIf="tipo.value == 2 || tipo.value == 3"> ********************************************************** -->
+      <div>
         <div class="col l4 s12">
           <label class="lead">Telefone:</label>
-          <input class="form-control" type="text" formControlName="telefone" autocomplete="off" placeholder="Telefone">
+          <input class="form-control" type="text" formControlName="telefone" autocomplete="off" placeholder="Telefone" [class.erro]="cadastroUsuario.controls['telefone'].invalid"
+            [class.sucesso]="cadastroUsuario.controls['telefone'].valid">
+        </div>
+
+        <div class="col l4 s12">
+          <label class="lead">CEP:</label>
+          <input class="form-control" type="text" formControlName="cep" autocomplete="off" placeholder="CEP" [class.erro]="cadastroUsuario.controls['cep'].invalid"
+            [class.sucesso]="cadastroUsuario.controls['cep'].valid">
         </div>
 
         <div class="col l4 s12">
           <label class="lead">Número da casa</label>
-          <input class="form-control" type="text" formControlName="numeroCasa" autocomplete="off" placeholder="Numéro da casa">
+          <input class="form-control" type="text" formControlName="numeroCasa" autocomplete="off" placeholder="Numéro da casa" [class.erro]="cadastroUsuario.controls['numeroCasa'].invalid"
+            [class.sucesso]="cadastroUsuario.controls['numeroCasa'].valid">
         </div>
 
         <div class="col l4 s12">
-          <label class="lead">RG:</label>
-          <input class="form-control" type="text" formControlName="rg" autocomplete="off" placeholder="RG">
-        </div>
-
-        <div class="col l4 s12">
-          <label class="lead">Idade:</label>
-          <input class="form-control" type="text" formControlName="idade" autocomplete="off" placeholder="Idade">
+          <label class="lead">Senha:</label>
+          <input class="form-control" type="text" formControlName="senha" autocomplete="off" placeholder="Senha" [class.erro]="cadastroUsuario.controls['senha'].invalid"
+            [class.sucesso]="cadastroUsuario.controls['senha'].valid">
         </div>
 
       </div>
 
-      <div class="col l8 s12">
+      <div class="col l6 s12">
         <div class="file-field input-field">
           <div class="btn blue">
             <span>Imagem</span>
-            <input type="file" class="form-control" formControlName="imagem" autocomplete="off" placeholder="Selecione uma imagem">
+            <!-- <input type="file" class="form-control" formControlName="imagem" autocomplete="off" placeholder="Selecione uma imagem"> -->
           </div>
           <div class="file-path-wrapper">
-            <input class="file-path validate" type="text">
+            <!-- <input class="file-path validate" type="text"> -->
           </div>
         </div>
       </div>
     </form>
   </div>
-</div>
-<div class="col l4 s12 center">
-  <button class="btn blue" (click)="addUser(cadastroUsuario.value)">Cadastrar</button>
+  <div class="col l6 s12 center">
+    <button class="btn blue" (click)="addUser(cadastroUsuario.value)">Cadastrar</button>
+  </div>
 </div>
