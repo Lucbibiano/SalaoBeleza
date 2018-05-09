@@ -24,8 +24,9 @@ export class ServicoService {
   async profissionais(): Promise<any[]> {
     const response = await this.http.get(`${SALAO_API}/Profissionais`).toPromise();
 
-    
+
     return response.json();
+
   }
 
 }

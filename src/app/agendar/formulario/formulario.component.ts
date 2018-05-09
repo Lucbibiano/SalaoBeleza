@@ -9,6 +9,7 @@ import { RemoveAtPipe } from '../../shared/custom-pipes/removeAT.pipe';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent implements OnInit {
+  profissionaisConst:Profissionais[];
   profissionais: Profissionais[];
   servicos: any[];
   selectedProf: any;
@@ -23,16 +24,29 @@ export class FormularioComponent implements OnInit {
   async ngOnInit() {
     this.pegarServico(await this.servicoService.servicos());
     this.pegarProfissional(await this.servicoService.profissionais());
-
-
   }
   pegarProfissional(x) {
     this.profissionais = x;
+    this.profissionaisConst = x;
   }
   pegarServico(x) {
     this.servicos = x;
   }
 
+  findProfByServ(servicoComparar: string) {
+    let indexHave: number[] = [];
+    let newProfissionais:Profissionais[] = [];
+    for (let i: number = 0; i < this.profissionaisConst.length; i++) {
+      if (this.profissionaisConst[i].Servicos.find(servico => servico === servicoComparar) ? true : false){
+        indexHave.push(this.profissionaisConst[i].id);
+      }
+    }
+    console.log(indexHave);
+    for(let i:number = 0; i <indexHave.length;i++ ){
+      newProfissionais.push( this.profissionaisConst[--indexHave[i] ] );
+    }
+    return newProfissionais;
+  }
   setProf(profissionalSelecionado: Profissionais) {
     this.selectedProf = profissionalSelecionado;
   }
@@ -44,6 +58,7 @@ export class FormularioComponent implements OnInit {
       console.log("Data: " + data + " selecionada")
     } else {
       alert("Data inválida");
+      document.getElementById("relogio").innerHTML = "00:00";
     }
   }
   selectTime(time) {
@@ -52,6 +67,7 @@ export class FormularioComponent implements OnInit {
       this.selectedTime = time;
     } else {
       alert("horário inválido")
+      document.getElementById("relogio").innerHTML = "00:00";
     }
   }
 
@@ -60,6 +76,7 @@ export class FormularioComponent implements OnInit {
     this.id_procurar = id;
     this.selectedServ = this.servicos.filter(servico => servico.id === +this.id_procurar)[0];
     console.log("servico selecionado: " + this.selectedServ.nome)
+    this.profissionais = this.findProfByServ(this.selectedServ.nome);
   }
   mudouProfissional(id: number) {
     this.id_procurar = id;

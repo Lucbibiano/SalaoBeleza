@@ -14,12 +14,14 @@
       <label class="lead" for="profissionalChoose"> Selecione o profissional </label>
       <select class="browser-default" (change)="mudouProfissional(profissionalChoose.value);" #profissionalChoose>
         <option value="" selected disabled> Selecione um profissional</option>
-        <option *ngFor="let profissional of profissionais" [value]="profissional.id"> {{ profissional.Nome | removeAT }} </option>
+        <option *ngFor="let profissional of profissionais" [value]="profissional.id" > 
+          {{ profissional.Nome | removeAT }}
+         </option>
       </select>
     </div>
     <div class="col l3 s12">
       <label for="calendario">Selecione uma data: </label>
-      <input type="date" id="calendario" (blur)="selectData(calendario.value)" #calendario>
+      <input type="date" class="datepicker" id="calendario" (blur)="selectData(calendario.value)" #calendario>
     </div>
     <div class="col l3 s12">
         <label for="calendario">Selecione um horário: </label>

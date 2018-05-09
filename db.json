@@ -7,9 +7,10 @@
       "Idade": 31,
       "RG": "876212216",
       "CEP": "64247336",
-      "Formacao": [
-        " Analise de Sistemas ",
-        " Tecnologia da Informação "
+      "Servicos": [
+        "escova progressiva",
+        "unhas",
+        "hidratacao"
       ],
       "Telefone": 11923720753,
       "NumeroCasa": " 73",
@@ -26,9 +27,9 @@
       "Idade": 18,
       "RG": "252378688",
       "CEP": "41865765",
-      "Formacao": [
-        " Tecnologia da Informação ",
-        " Sistemas da Informação "
+      "Servicos": [
+        "unhas",
+        "hidratacao"
       ],
       "Telefone": 11927705415,
       "NumeroCasa": " 68",
@@ -45,9 +46,9 @@
       "Idade": 26,
       "RG": "088653827",
       "CEP": "13672218",
-      "Formacao": [
-        " Engenharia da Computação ",
-        " Tecnologia da Informação "
+      "Servicos": [
+        "escova progressiva",
+        "hidratacao"
       ],
       "Telefone": 11931382721,
       "NumeroCasa": " 23",
@@ -64,9 +65,9 @@
       "Idade": 37,
       "RG": "526746867",
       "CEP": "70405623",
-      "Formacao": [
-        " Redes ",
-        " Sistemas da Informação "
+      "Servicos": [
+        "unhas",
+        "hidratacao"
       ],
       "Telefone": 11976182433,
       "NumeroCasa": " 61",
@@ -83,9 +84,9 @@
       "Idade": 29,
       "RG": "310703764",
       "CEP": "18338280",
-      "Formacao": [
-        " Engenharia da Computação ",
-        " Ciência da Computação "
+      "Servicos": [
+        "escova progressiva",
+        "unhas"
       ],
       "Telefone": 11967707716,
       "NumeroCasa": " 71",
@@ -102,9 +103,9 @@
       "Idade": 23,
       "RG": "814534664",
       "CEP": "55740700",
-      "Formacao": [
-        " Analise de Sistemas ",
-        " Tecnologia da Informação "
+      "Servicos": [
+        "unhas ",
+        "hidratacao"
       ],
       "Telefone": 11931043141,
       "NumeroCasa": " 85",
@@ -121,9 +122,8 @@
       "Idade": 25,
       "RG": "065813771",
       "CEP": "41778136",
-      "Formacao": [
-        " Engenharia da Computação ",
-        " Ciência da Computação "
+      "Servicos": [
+        "unhas"
       ],
       "Telefone": 11965747320,
       "NumeroCasa": " 03",
@@ -140,9 +140,8 @@
       "Idade": 28,
       "RG": "855631004",
       "CEP": "47223284",
-      "Formacao": [
-        " Analise de Sistemas ",
-        " Redes "
+      "Servicos": [
+        "hidratacao"
       ],
       "Telefone": 11915324383,
       "NumeroCasa": " 05",
@@ -159,9 +158,9 @@
       "Idade": 21,
       "RG": "003612016",
       "CEP": "43281561",
-      "Formacao": [
-        " Analise de Sistemas ",
-        " Tecnologia da Informação "
+      "Servicos": [
+        "unhas",
+        "hidratacao"
       ],
       "Telefone": 11916767226,
       "NumeroCasa": " 31",
@@ -178,9 +177,8 @@
       "Idade": 19,
       "RG": "212238776",
       "CEP": "78117725",
-      "Formacao": [
-        " Analise de Sistemas ",
-        " Redes "
+      "Servicos": [
+        "escova progressiva"
       ],
       "Telefone": 11951313756,
       "NumeroCasa": " 41",
@@ -189,81 +187,6 @@
       "Tipo": "1",
       "Senha": "Livia Ahmad",
       "Imagem": "data:image/jpeg;base64,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"
-    },
-    {
-      "nome": "Michelly",
-      "cpf": "12345676596",
-      "usuario": "mih",
-      "cep": "",
-      "senha": "",
-      "formacao": "Analista",
-      "tipo": "",
-      "telefone": "",
-      "numeroCasa": "",
-      "rg": "345456754",
-      "imagem": "C:\\fakepath\\download.jpg",
-      "idade": "22",
-      "id": 11
-    },
-    {
-      "nome": "Michelly",
-      "cpf": "12345676596",
-      "usuario": "mih",
-      "cep": "",
-      "senha": "",
-      "formacao": "Analista",
-      "tipo": "",
-      "telefone": "",
-      "numeroCasa": "",
-      "rg": "345456754",
-      "imagem": "C:\\fakepath\\download.jpg",
-      "idade": "22",
-      "id": 12
-    },
-    {
-      "nome": "Michelly",
-      "cpf": "12345676596",
-      "usuario": "mih",
-      "cep": "",
-      "senha": "",
-      "formacao": "Analista",
-      "tipo": "",
-      "telefone": "",
-      "numeroCasa": "",
-      "rg": "345456754",
-      "imagem": "C:\\fakepath\\download.jpg",
-      "idade": "22",
-      "id": 13
-    },
-    {
-      "nome": "Michelly",
-      "cpf": "12345676596",
-      "usuario": "mih",
-      "cep": "434343434",
-      "senha": "123456",
-      "formacao": "Analista",
-      "tipo": "",
-      "telefone": "1234343333423",
-      "numeroCasa": "7",
-      "rg": "345456754",
-      "imagem": "C:\\fakepath\\download.jpg",
-      "idade": "22",
-      "id": 14
-    },
-    {
-      "nome": "Mariane",
-      "cpf": "12345676596",
-      "usuario": "mariane",
-      "cep": "434343434",
-      "senha": "123456",
-      "formacao": "Analista",
-      "tipo": "",
-      "telefone": "1234343333423",
-      "numeroCasa": "7",
-      "rg": "345456754",
-      "imagem": "",
-      "idade": "22",
-      "id": 15
     }
   ],
   "Clientes": [

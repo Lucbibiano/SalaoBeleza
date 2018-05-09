@@ -16,12 +16,17 @@ export class ProfissionaisComponent implements OnInit {
 
   constructor(private servicoService: ServicoService) { }
 
-  ngOnInit() {
-    this.servicoService.profissionais().subscribe(profissionais => this.profissionais = profissionais);
+  async ngOnInit() {
+    this.pegarProfissional(await this.servicoService.profissionais());
+
   }
+  pegarProfissional(x) {
+    this.profissionais = x;
+  }
+  
   setName(selectedProfissional: Profissionais) {
     this.moverAteCabecalho();
-    console.log(selectedProfissional);
+    console.log("Selecionado: "+selectedProfissional);
     if (selectedProfissional.Masculino) {
       this.letra = "o";
     } else {

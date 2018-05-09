@@ -5,7 +5,7 @@ export class Profissionais{
     "Idade": number;
     "RG": string;
     "CEP": string;
-    "Formacao": string[];
+    "Servicos": string[];
     "Telefone": number;
     "NumeroCasa": string;
     "Usuario": string;

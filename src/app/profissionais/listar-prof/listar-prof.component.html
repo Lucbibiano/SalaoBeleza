@@ -29,7 +29,8 @@
         <br>
         <i class="material-icons right">close</i>
         <b> Nome:</b>
-        <span class="truncate">{{profissional.Nome  | removeAT}}
+        <span class="truncate">{{profissional.Nome  }}
+          <!-- | removeAT -->
         </span>
         <b>Idade: </b>{{profissional.Idade}} <br>
         <b> CPF: </b> {{profissional.CPF}}
@@ -40,10 +41,10 @@
         <br>
 
         <div class="form">
-          <b>Formações:</b>
+          <b>Servicos:</b>
           <div class="form">
-            <span *ngFor="let formacao of profissional.Formacao">
-              {{formacao}}''
+            <span *ngFor="let servico of profissional.Servicos">
+              {{servico}}
               <br>
             </span>
           </div>
