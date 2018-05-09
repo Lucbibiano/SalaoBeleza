@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, MinLengthValidator, FormControl, FormControlName } from '@angular/forms';
 import { CadastroService } from '../cadastro.service';
+import { ServicoprestadoService } from '../../servicos/servicosprestados.service'
+import { Servicos } from '../../shared/interfaces/servicos';
 
 @Component({
   selector: 'app-usuarios',
@@ -12,23 +14,26 @@ export class UsuariosComponent implements OnInit {
   cadastroUsuario: FormGroup;
   escolha: number = 0;
   usuarioIsValid: boolean = false;
-  erro: string = "";
+  imgFile: File;
+  leitorImg = new FileReader();
+  endImg: string;
+  servs: Servicos;
 
   constructor(private cadastroServ: CadastroService) { }
 
   ngOnInit() {
     this.criaFormulario();
   }
+  
+  onChange(event){
+    this.imgFile = event.target.files[0];
+    this.leitorImg.readAsDataURL(this.imgFile);
+  }
 
   verificaUser(cadastroUsuario) {
     this.usuarioIsValid =  this.cadastroServ.verificaUser(""+cadastroUsuario.usuario);
-    console.log("teste");
-    console.log(this.usuarioIsValid);
   }
 
-  teste(t){
-      console.log(t,"teste");
-  }
   criaFormulario() {
     this.cadastroUsuario = new FormGroup({
       nome: new FormControl('', [Validators.required, Validators.minLength(5)]),
@@ -41,7 +46,6 @@ export class UsuariosComponent implements OnInit {
       telefone: new FormControl('', [Validators.required, Validators.pattern("^[0-9]*$")]),
       numeroCasa: new FormControl('',[Validators.pattern("^[0-9]*$")]),
       rg: new FormControl('', [Validators.required, Validators.minLength(9), Validators.pattern("^[0-9]*$")]),
-      imagem: new FormControl(''),
       idade: new FormControl('', [Validators.pattern("^[0-9]*$")])
     });
   }
@@ -51,7 +55,7 @@ export class UsuariosComponent implements OnInit {
   }
 
   addUser(usuario: Usuario) {
+    usuario.imagem = this.leitorImg.result;
     // this.cadastroServ.addUser(usuario);
   }
-
 }

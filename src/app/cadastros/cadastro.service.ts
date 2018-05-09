@@ -2,8 +2,6 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { SALAO_API } from "../shared/API/api";
 
-
-
 @Injectable()
 export class CadastroService{
     constructor(private http: HttpClient){}
@@ -39,6 +37,7 @@ export class CadastroService{
         this.http.get(`${SALAO_API}/Clientes`).
         subscribe(retorno => {this.clientes = retorno})
     }
+    
     retornaProfissionais(){
         this.http.get(`${SALAO_API}/Profissionais`).
         subscribe(retorno => {this.profissionais = retorno})
