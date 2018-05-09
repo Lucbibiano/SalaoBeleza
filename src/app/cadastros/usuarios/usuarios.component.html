@@ -3,21 +3,14 @@
   <h3 class="flow-text center">Escolha o tipo do cadastro</h3>
   <form [formGroup]="cadastroUsuario">
     <div class="row">
-      <div class="col l8 s12">
-        <select #tipo formControlName="tipo" class="browser-default" (change)="abrirForm(tipo.value)">
+      <div class="col l4 s12">
+        <select #tipo formControlName="tipo" style="border: 2px solid black" class="browser-default" (change)="abrirForm(tipo.value)">
           <option value=0 selected disabled>Escolha o tipo do cadastro</option>
           <option value=1>Cliente</option>
           <option value=2>Funcionário</option>
           <option value=3>Administrador</option>
         </select>
       </div>
-      <!-- EM DEVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV -->
-      <!-- <div class="col l6 s12">
-        <select class="browser-defalt" ngFor="let servico in servicos">
-          <option>{{servico?.nome}}</option>
-        </select>
-      </div> -->
-      <!-- EM DEVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV -->
     </div>
     <!-- [hidden]="escolha == 0" -->
     <div class="row" [hidden]="escolha == 0">
@@ -52,13 +45,8 @@
         <input class="form-control" type="text" formControlName="cpf" autocomplete="off" placeholder="CPF" [class.erro]="cadastroUsuario.controls['cpf'].invalid"
           [class.sucesso]="cadastroUsuario.controls['cpf'].valid">
       </div>
-      <div class="col l6 s12">
-        <label class="lead">Serviços:</label>
-        <input class="form-control" type="text" formControlName="servicos" autocomplete="off" placeholder="Serviços" [class.erro]="cadastroUsuario.controls['servicos'].invalid"
-          [class.sucesso]="cadastroUsuario.controls['servicos'].valid">
-      </div>
 
-      <div class="col l4 s12">
+      <div class="col l6 s12">
         <label class="lead">RG:</label>
         <span [hidden]="cadastroUsuario.controls['rg'].untouched || cadastroUsuario.controls['rg'].valid">
           <label class="vermelho">* Campo obrigatório, somente números.</label>
@@ -67,7 +55,7 @@
           [class.sucesso]="cadastroUsuario.controls['rg'].valid">
       </div>
 
-      <div class="col l4 s12">
+      <div class="col l6 s12">
         <label class="lead">Idade:</label>
         <span [hidden]="cadastroUsuario.controls['idade'].untouched || cadastroUsuario.controls['idade'].valid">
           <label class="vermelho">* Somente números.</label>
@@ -76,6 +64,15 @@
           [class.sucesso]="cadastroUsuario.controls['idade'].valid">
       </div>
       <!-- *ngIf="tipo.value == 2 || tipo.value == 3" -->
+      <div class="row" *ngIf="tipo.value == 2 || tipo.value == 3">
+          <div class="col l6 s12">
+            <label class="lead">Serviços:</label>
+            <select class="browser-default" style="border: 2px solid black" formControlName="servicos" [class.erro]="cadastroUsuario.controls['servicos'].invalid">
+              <option selected disabled>Selecione o serviço</option>
+              <option *ngFor="let s of cadastroServ.servicos" value="{{s.nome}}">{{s.nome | titlecase}}</option>
+            </select>
+          </div>
+        </div>
       <div *ngIf="tipo.value == 2 || tipo.value == 3">
         <div class="col l4 s12">
           <label class="lead">Telefone:</label>

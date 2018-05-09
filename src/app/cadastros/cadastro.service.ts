@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { SALAO_API } from "../shared/API/api";
+import { Servicos } from "../shared/interfaces/servicos";
 
 @Injectable()
 export class CadastroService{
@@ -8,6 +9,7 @@ export class CadastroService{
 
     clientes: any;
     profissionais: any;
+    servicos: any;
 
     addUser(usuario: Usuario){
         if(!usuario.servicos){ // Cliente
@@ -18,6 +20,12 @@ export class CadastroService{
             this.http.post(`${SALAO_API}/Profissionais`, usuario)
             .subscribe(retorno => {console.log("Profissional add", retorno)})
         }
+    }
+
+    getServicos(){
+        this.http.get(`${SALAO_API}/Servicos`)
+        .subscribe(retornoServicos => {this.servicos = retornoServicos})
+        
     }
 
     verificaUser(usuario): boolean{
