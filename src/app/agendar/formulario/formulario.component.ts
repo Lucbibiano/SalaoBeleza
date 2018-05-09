@@ -9,7 +9,7 @@ import { RemoveAtPipe } from '../../shared/custom-pipes/removeAT.pipe';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent implements OnInit {
-  profissionaisConst:Profissionais[];
+  profissionaisConst: Profissionais[];
   profissionais: Profissionais[];
   servicos: any[];
   selectedProf: any;
@@ -17,13 +17,27 @@ export class FormularioComponent implements OnInit {
   selectedTime: any;
   selectedServ: Servicos;
   id_procurar: any;
+  data = new Date;
+  dataAgora: string;
+  horaAgora: string;
 
   constructor(private servicoService: ServicoService) {
-
   }
   async ngOnInit() {
     this.pegarServico(await this.servicoService.servicos());
     this.pegarProfissional(await this.servicoService.profissionais());
+    this.setDay();
+    this.setHour();
+  }
+  setDay() {
+    this.dataAgora = this.data.getFullYear() + "-" + this.complementoDatas((this.data.getMonth() + 1)) + "-" + this.complementoDatas( this.data.getDate());
+  }
+  setHour() {
+    this.horaAgora = this.complementoDatas(this.data.getHours()) + ":" +this.complementoDatas(this.data.getMinutes()); ;
+  }
+  complementoDatas(x){
+    if(x <10){ return "0"+ x}
+    return x;
   }
   pegarProfissional(x) {
     this.profissionais = x;
@@ -35,15 +49,15 @@ export class FormularioComponent implements OnInit {
 
   findProfByServ(servicoComparar: string) {
     let indexHave: number[] = [];
-    let newProfissionais:Profissionais[] = [];
+    let newProfissionais: Profissionais[] = [];
     for (let i: number = 0; i < this.profissionaisConst.length; i++) {
-      if (this.profissionaisConst[i].Servicos.find(servico => servico === servicoComparar) ? true : false){
-        indexHave.push(this.profissionaisConst[i].id);
+      if (this.profissionaisConst[i].Servicos.find(servico => servico === servicoComparar) ? true : false) {
+        indexHave.push(i);
       }
     }
     console.log(indexHave);
-    for(let i:number = 0; i <indexHave.length;i++ ){
-      newProfissionais.push( this.profissionaisConst[--indexHave[i] ] );
+    for (let i: number = 0; i < indexHave.length; i++) {
+      newProfissionais.push(this.profissionaisConst[indexHave[i]]);
     }
     return newProfissionais;
   }
@@ -52,13 +66,13 @@ export class FormularioComponent implements OnInit {
   }
 
   selectData(data) {
-    console.log(data);
     if (data != undefined && data) {
       this.selectedDate = data;
-      console.log("Data: " + data + " selecionada")
+      console.log("Data: " + data + " selecionada") 
     } else {
       alert("Data inválida");
       document.getElementById("relogio").innerHTML = "00:00";
+      this.setDay();
     }
   }
   selectTime(time) {
@@ -69,6 +83,8 @@ export class FormularioComponent implements OnInit {
       alert("horário inválido")
       document.getElementById("relogio").innerHTML = "00:00";
     }
+
+    this.setHour();
   }
 
 

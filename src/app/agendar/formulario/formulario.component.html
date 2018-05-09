@@ -2,7 +2,7 @@
   <h1>Agendamento</h1>
   <form>
 
-    <div class="col l6 s12">
+    <div class="col l4 s12">
       <label class="lead">Selecione o serviço</label>
       <select class="browser-default" (change)="mudouServico(servicesChoose.value)" #servicesChoose>
         <option value="" selected disabled> Selecione um servico</option>
@@ -10,54 +10,22 @@
       </select>
     </div>
 
-    <div class="col l6 s12">
+    <div class="col l4 s12">
       <label class="lead" for="profissionalChoose"> Selecione o profissional </label>
       <select class="browser-default" (change)="mudouProfissional(profissionalChoose.value);" #profissionalChoose>
         <option value="" selected disabled> Selecione um profissional</option>
-        <option *ngFor="let profissional of profissionais" [value]="profissional.id" > 
+        <option *ngFor="let profissional of profissionais" [value]="profissional.id">
           {{ profissional.Nome | removeAT }}
-         </option>
+        </option>
       </select>
     </div>
-    <div class="col l3 s12">
+    <div class="col l2 s12">
       <label for="calendario">Selecione uma data: </label>
-      <input type="date" class="datepicker" id="calendario" (blur)="selectData(calendario.value)" #calendario>
+      <input type="date" [value]="dataAgora" id="calendario" (blur)="selectData(calendario.value)" #calendario>
     </div>
-    <div class="col l3 s12">
-        <label for="calendario">Selecione um horário: </label>
-      <input type="time" id="relogio" (blur)="selectTime(relogio.value)" #relogio>
+    <div class="col l2   s12">
+      <label for="calendario">Selecione um horário: </label>
+      <input type="time" id="relogio" [value]="horaAgora" (blur)="selectTime(relogio.value)" #relogio>
     </div>
   </form>
-  <!-- #region Sistema antigos
-    <div>
-    <div>
-      <h2 *ngIf="!selectedServ">Selecione o serviço</h2>
-      <select class="browser-default" (change)="mudou(valores.value)" *ngIf="!selectedServ" #valores>
-        <option value="" disabled> Selecione um servico</option>
-        <option *ngFor="let servico of servicos" [value]="servico.id">{{servico.nome}}</option>
-      </select>
-
-
-      <h2 *ngIf="selectedServ && !selectedProf">Selecione o funcionário</h2>
-      <div class="col l4 s12" *ngFor="let profissional of profissionais">
-        <div *ngIf="selectedServ && !selectedProf">
-          <app-listar-prof [profissional]="profissional" (selecionado)="setProf($event)" *ngIf="!selectedProf"></app-listar-prof>
-        </div>
-      </div>
-
-
-      <div class=" col l4 s6" *ngIf="selectedProf && !selectedDate">
-        <input type="date" #calendario>
-        <button (click)="selectData(calendario.value)">Selecionar data</button>
-      </div>
-
-
-      <div class=" col l4 s6" *ngIf="selectedDate && !selectedTime">
-        <input type="time" #horario>
-        <button (click)="selectTime(horario.value)">Selecionar data</button>
-      </div>
-
-
-    </div>
-  </div> #endregion-->
 </div>
