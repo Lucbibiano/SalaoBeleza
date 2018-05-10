@@ -1,11 +1,11 @@
-interface Usuario{
-    //GERAL
+export class Usuario {
+    //CLIENTE
     id?: number;
     nome: string;
     cpf: number;
     usuario: string;
     cep: number;
-    senha: string[];
+    senha: string;
     imagem: string;
     //PROFISSIONAIS
     servicos?: string[];

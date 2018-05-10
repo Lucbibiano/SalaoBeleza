@@ -23,6 +23,7 @@
         <input [class.erro]="cadastroUsuario.controls['nome'].invalid" [class.sucesso]="cadastroUsuario.controls['nome'].valid" type="text"
           formControlName="nome" placeholder="Seu nome">
       </div>
+
       <!-- [formato]="'maiusculo'" -->
 
       <div class="col l6 s12">
@@ -43,8 +44,8 @@
           <label class="vermelho">* Campo obrigatório, somente números.</label>
         </span>
 
-        <input [appFormataCamposDiretiva]="'formataCpf'" class="form-control" type="text" formControlName="cpf" autocomplete="off" placeholder="CPF" [class.erro]="cadastroUsuario.controls['cpf'].invalid"
-          [class.sucesso]="cadastroUsuario.controls['cpf'].valid">
+        <input [appFormataCamposDiretiva]="'formataCpf'" class="form-control" type="text" formControlName="cpf" autocomplete="off"
+          placeholder="CPF" [class.erro]="cadastroUsuario.controls['cpf'].invalid" [class.sucesso]="cadastroUsuario.controls['cpf'].valid">
       </div>
 
       <div class="col l6 s12">
@@ -52,48 +53,48 @@
         <span [hidden]="cadastroUsuario.controls['rg'].untouched || cadastroUsuario.controls['rg'].valid">
           <label class="vermelho">* Campo obrigatório, somente números.</label>
         </span>
-        <input [appFormataCamposDiretiva]="'formataRg'" class="form-control" type="text" formControlName="rg" autocomplete="off" placeholder="RG" [class.erro]="cadastroUsuario.controls['rg'].invalid"
-          [class.sucesso]="cadastroUsuario.controls['rg'].valid">
+        <input [appFormataCamposDiretiva]="'formataRg'" class="form-control" type="text" formControlName="rg" autocomplete="off"
+          placeholder="RG" [class.erro]="cadastroUsuario.controls['rg'].invalid" [class.sucesso]="cadastroUsuario.controls['rg'].valid">
       </div>
 
       <div class="col l6 s12">
-        <label class="lead">Idade:</label>
-        <span [hidden]="cadastroUsuario.controls['idade'].untouched || cadastroUsuario.controls['idade'].valid">
-          <label class="vermelho">* Somente números.</label>
+        <label class="lead">CEP:</label>
+        <span [hidden]="cadastroUsuario.controls['cep'].untouched || cadastroUsuario.controls['cep'].valid">
+          <label class="vermelho">* Campo obrigatório, somente números.</label>
         </span>
-        <input class="form-control" type="text" formControlName="idade" autocomplete="off" placeholder="Idade" [class.erro]="cadastroUsuario.controls['idade'].invalid"
-          [class.sucesso]="cadastroUsuario.controls['idade'].valid">
+        <input [appFormataCamposDiretiva]="'formatoCep'" class="form-control" type="text" formControlName="cep" autocomplete="off"
+          placeholder="CEP" [class.erro]="cadastroUsuario.controls['cep'].invalid" [class.sucesso]="cadastroUsuario.controls['cep'].valid">
       </div>
-      <!-- *ngIf="tipo.value == 2 || tipo.value == 3" -->
-      <div class="row" *ngIf="tipo.value == 2 || tipo.value == 3">
-          <div class="col l6 s12">
-            <label class="lead">Serviços:</label>
-            <select class="browser-default" style="border: 2px solid black" formControlName="servicos" [class.erro]="cadastroUsuario.controls['servicos'].invalid">
-              <option selected disabled>Selecione o serviço</option>
-              <option *ngFor="let s of cadastroServ.servicos" value="{{s.nome}}">{{s.nome | titlecase}}</option>
-            </select>
-          </div>
+
+      <div *ngIf="tipo.value == 2 || tipo.value == 3" class="row">
+        <div class="col l6 s12">
+          <label class="lead">Serviços:</label>
+          <select class="browser-default" style="border: 2px solid black" formControlName="servicos" [class.erro]="cadastroUsuario.controls['servicos'].invalid">
+            <option selected disabled>Selecione o serviço</option>
+            <option *ngFor="let s of cadastroServ.servicos" value="{{s.nome}}">{{s.nome | titlecase}}</option>
+          </select>
         </div>
-      <div *ngIf="tipo.value == 2 || tipo.value == 3">
+      </div>
+
+      <div>
         <div class="col l4 s12">
           <label class="lead">Telefone:</label>
           <span [hidden]="cadastroUsuario.controls['telefone'].untouched || cadastroUsuario.controls['telefone'].valid">
             <label class="vermelho">* Campo obrigatório, somente números.</label>
           </span>
-          <input [appFormataCamposDiretiva]="'formatoTelefone'" class="form-control" type="text" formControlName="telefone" autocomplete="off" placeholder="Telefone" [class.erro]="cadastroUsuario.controls['telefone'].invalid"
-            [class.sucesso]="cadastroUsuario.controls['telefone'].valid">
+          <input [appFormataCamposDiretiva]="'formatoTelefone'" class="form-control" type="text" formControlName="telefone" autocomplete="off"
+            placeholder="Telefone" [class.erro]="cadastroUsuario.controls['telefone'].invalid" [class.sucesso]="cadastroUsuario.controls['telefone'].valid">
         </div>
 
-        <div class="col l4 s12">
-          <label class="lead">CEP:</label>
-          <span [hidden]="cadastroUsuario.controls['cep'].untouched || cadastroUsuario.controls['cep'].valid">
-            <label class="vermelho">* Campo obrigatório, somente números.</label>
+        <div class="col l4 s12" *ngIf="tipo.value == 2 || tipo.value == 3">
+          <label class="lead">Idade:</label>
+          <span [hidden]="cadastroUsuario.controls['idade'].untouched || cadastroUsuario.controls['idade'].valid">
+            <label class="vermelho">* Somente números.</label>
           </span>
-          <input [appFormataCamposDiretiva]="'formatoCep'" class="form-control" type="text" formControlName="cep" autocomplete="off" placeholder="CEP" [class.erro]="cadastroUsuario.controls['cep'].invalid"
-            [class.sucesso]="cadastroUsuario.controls['cep'].valid">
+          <input class="form-control" type="text" formControlName="idade" autocomplete="off" placeholder="Idade" [class.erro]="cadastroUsuario.controls['idade'].invalid"
+            [class.sucesso]="cadastroUsuario.controls['idade'].valid">
         </div>
-
-        <div class="col l4 s12">
+        <div *ngIf="tipo.value == 2 || tipo.value == 3" class="col l4 s12">
           <label class="lead">Número da casa</label>
           <span [hidden]="cadastroUsuario.controls['numeroCasa'].untouched || cadastroUsuario.controls['numeroCasa'].valid">
             <label class="vermelho">* Somente números.</label>

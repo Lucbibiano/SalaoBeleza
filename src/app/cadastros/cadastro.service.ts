@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { SALAO_API } from "../shared/API/api";
 import { Servicos } from "../shared/interfaces/servicos";
+import { Usuario } from "./usuarios/user";
 
 @Injectable()
 export class CadastroService{
