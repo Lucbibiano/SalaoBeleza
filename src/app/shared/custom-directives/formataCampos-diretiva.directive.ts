@@ -34,7 +34,8 @@ export class FormataCamposDiretivaDirective {
       }
     }
     else if (this.formato == 'formatoTelefone') {
-      if (valor.indexOf('-') == 11) { // verifica se o elemento já foi "completamente preenchido".
+      if (valor.indexOf('-') == 9) { 
+        // verifica se o elemento já foi "completamente preenchido".
       } else {
         if (valor.length > 2) {
           valor = "(" + valor.substring(0, 2) + ")" + valor.substring(2, 7) + "-" + valor.substring(7, 11);
@@ -43,8 +44,8 @@ export class FormataCamposDiretivaDirective {
       }
     }
     else if (this.formato == 'formatoCep') {
-      if (valor.indexOf('-') == 8) {
-
+      if (valor.indexOf('-') == 5) {
+        // verifica se o elemento já foi "completamente preenchido".
       } else {
         if (valor.length >= 8) {
           valor = valor.substring(0, 5) + "-" + valor.substring(5, 8);
