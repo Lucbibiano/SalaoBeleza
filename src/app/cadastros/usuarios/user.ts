@@ -5,10 +5,10 @@ interface Usuario{
     cpf: number;
     usuario: string;
     cep: number;
-    senha: string;
+    senha: string[];
     imagem: string;
     //PROFISSIONAIS
-    servicos?: string;
+    servicos?: string[];
     tipo?: number;
     telefone?: number;
     numeroCasa?: number;
