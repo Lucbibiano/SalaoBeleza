@@ -13,8 +13,8 @@ export class CadastroService{
 
     addUser(usuario: Usuario){
         if(!usuario.servicos){ // Cliente
-            this.http.post(`${SALAO_API}/Clientes`, usuario).
-            subscribe(retorno => {console.log("Cliente add ", retorno)})
+            this.http.post(`${SALAO_API}/Clientes`, usuario)
+            .subscribe(retorno => {console.log("Cliente add ", retorno)})
         }
         else if(usuario.servicos){ // Funcionário
             this.http.post(`${SALAO_API}/Profissionais`, usuario)
@@ -25,7 +25,6 @@ export class CadastroService{
     getServicos(){
         this.http.get(`${SALAO_API}/Servicos`)
         .subscribe(retornoServicos => {this.servicos = retornoServicos})
-        
     }
 
     verificaUser(usuario): boolean{

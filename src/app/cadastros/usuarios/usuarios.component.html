@@ -20,9 +20,10 @@
           <!-- <i class="material-icons erro">error</i> EXIBE O ICONE DE ERRO, MAS DANIFICA A ESTRUTURA DO FORMULÁRIO-->
           <label class="vermelho">* Campo obrigatório</label>
         </span>
-        <input appCepDiretiva [class.erro]="cadastroUsuario.controls['nome'].invalid" [class.sucesso]="cadastroUsuario.controls['nome'].valid" type="text"
+        <input [class.erro]="cadastroUsuario.controls['nome'].invalid" [class.sucesso]="cadastroUsuario.controls['nome'].valid" type="text"
           formControlName="nome" placeholder="Seu nome">
       </div>
+      <!-- [formato]="'maiusculo'" -->
 
       <div class="col l6 s12">
         <label class="lead">Usuário:</label>
@@ -42,7 +43,7 @@
           <label class="vermelho">* Campo obrigatório, somente números.</label>
         </span>
 
-        <input class="form-control" type="text" formControlName="cpf" autocomplete="off" placeholder="CPF" [class.erro]="cadastroUsuario.controls['cpf'].invalid"
+        <input [appFormataCamposDiretiva]="'formataCpf'" class="form-control" type="text" formControlName="cpf" autocomplete="off" placeholder="CPF" [class.erro]="cadastroUsuario.controls['cpf'].invalid"
           [class.sucesso]="cadastroUsuario.controls['cpf'].valid">
       </div>
 
@@ -51,7 +52,7 @@
         <span [hidden]="cadastroUsuario.controls['rg'].untouched || cadastroUsuario.controls['rg'].valid">
           <label class="vermelho">* Campo obrigatório, somente números.</label>
         </span>
-        <input class="form-control" type="text" formControlName="rg" autocomplete="off" placeholder="RG" [class.erro]="cadastroUsuario.controls['rg'].invalid"
+        <input [appFormataCamposDiretiva]="'formataRg'" class="form-control" type="text" formControlName="rg" autocomplete="off" placeholder="RG" [class.erro]="cadastroUsuario.controls['rg'].invalid"
           [class.sucesso]="cadastroUsuario.controls['rg'].valid">
       </div>
 
@@ -79,7 +80,7 @@
           <span [hidden]="cadastroUsuario.controls['telefone'].untouched || cadastroUsuario.controls['telefone'].valid">
             <label class="vermelho">* Campo obrigatório, somente números.</label>
           </span>
-          <input class="form-control" type="text" formControlName="telefone" autocomplete="off" placeholder="Telefone" [class.erro]="cadastroUsuario.controls['telefone'].invalid"
+          <input [appFormataCamposDiretiva]="'formatoTelefone'" class="form-control" type="text" formControlName="telefone" autocomplete="off" placeholder="Telefone" [class.erro]="cadastroUsuario.controls['telefone'].invalid"
             [class.sucesso]="cadastroUsuario.controls['telefone'].valid">
         </div>
 
@@ -88,7 +89,7 @@
           <span [hidden]="cadastroUsuario.controls['cep'].untouched || cadastroUsuario.controls['cep'].valid">
             <label class="vermelho">* Campo obrigatório, somente números.</label>
           </span>
-          <input class="form-control" type="text" formControlName="cep" autocomplete="off" placeholder="CEP" [class.erro]="cadastroUsuario.controls['cep'].invalid"
+          <input [appFormataCamposDiretiva]="'formatoCep'" class="form-control" type="text" formControlName="cep" autocomplete="off" placeholder="CEP" [class.erro]="cadastroUsuario.controls['cep'].invalid"
             [class.sucesso]="cadastroUsuario.controls['cep'].valid">
         </div>
 
@@ -111,7 +112,7 @@
         </div>
       </div>
 
-      <div class="col l6 s12">
+      <div class="col l8 s12">
         <div class="file-field input-field">
           <div class="btn blue">
             <span>Imagem</span>
