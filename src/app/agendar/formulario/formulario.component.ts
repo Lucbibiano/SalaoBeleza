@@ -40,7 +40,7 @@ export class FormularioComponent implements OnInit {
     this.setHour();
   }
   setDay() {
-    this.dataAgora = this.data.getFullYear() + "-" + this.complementoDatas((this.data.getMonth() + 1)) + "-" + this.complementoDatas(this.data.getDate());
+    this.dataAgora = "" + this.complementoDatas(this.data.getDate()) + "/" + this.complementoDatas((this.data.getMonth() + 1)) + "/" + this.complementoDatas(this.data.getFullYear());
   }
   setHour() {
     this.horaAgora = this.complementoDatas(this.data.getHours()) + ":" + this.complementoDatas(this.data.getMinutes());;
@@ -122,6 +122,7 @@ export class FormularioComponent implements OnInit {
 
 
 export class DatePicker {
+
   birthDate: string;
   birthTime: string;
 
@@ -138,6 +139,8 @@ export class DatePicker {
       'fromTime': new FormControl('08:30')
     });
   }
+
+
 
   openDatePicker() {
     //actions are open or close
