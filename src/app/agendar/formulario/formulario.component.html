@@ -21,24 +21,15 @@
     </div>
     <div class="col l2 s12">
       <label for="calendario">Selecione uma data: </label>
-      
 
-
-
-
-
-
-      <input id="birthdate" name="birthdate"
-      
-      materialize="pickadate"
-      [materializeActions]="birthDateActions"
-      [materializeParams]="[{format: 'dd/mm/yyyy'}]"
-      type="text" />
+      <input id="birthdate" name="birthdate" materialize="pickadate" [materializeActions]="birthDateActions" [materializeParams]="[{format: 'dd/mm/yyyy'}]"
+        value="{{dataAgora}}" type="text" />
 
     </div>
-    <div class="col l2   s12">
-      <label for="calendario">Selecione um horário: </label>
-      <input type="time" id="relogio" [value]="horaAgora" (blur)="selectTime(relogio.value)" #relogio>
+    <div class="col l2 s12">
+      <label for="birthtime">Birthtime {{birthTime}}</label>
+      <input id="birthtime" name="birthtime" [(ngModel)]="birthTime" materialize="pickatime" [materializeActions]="birthTimeActions"
+        [materializeParams]="[{twelvehour: false}]" placeholder="00:00" value="{{horaAgora}}" class="validate" type="text">
     </div>
   </form>
 </div>
