@@ -21,7 +21,20 @@
     </div>
     <div class="col l2 s12">
       <label for="calendario">Selecione uma data: </label>
-      <input type="date" [value]="dataAgora" id="calendario" (blur)="selectData(calendario.value)" #calendario>
+      
+
+
+
+
+
+
+      <input id="birthdate" name="birthdate"
+      
+      materialize="pickadate"
+      [materializeActions]="birthDateActions"
+      [materializeParams]="[{format: 'dd/mm/yyyy'}]"
+      type="text" />
+
     </div>
     <div class="col l2   s12">
       <label for="calendario">Selecione um horário: </label>

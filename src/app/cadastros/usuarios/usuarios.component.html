@@ -107,7 +107,7 @@
           <span [hidden]="cadastroUsuario.controls['senha'].untouched || cadastroUsuario.controls['senha'].valid">
             <label class="vermelho">* Campo obrigatório.</label>
           </span>
-          <input class="form-control" type="text" formControlName="senha" autocomplete="off" placeholder="Senha" [class.erro]="cadastroUsuario.controls['senha'].invalid"
+          <input class="form-control" type="password" formControlName="senha" autocomplete="off" placeholder="Senha" [class.erro]="cadastroUsuario.controls['senha'].invalid"
             [class.sucesso]="cadastroUsuario.controls['senha'].valid">
         </div>
       </div>
