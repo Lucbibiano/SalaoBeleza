@@ -27,7 +27,7 @@ export class ProfissionaisComponent implements OnInit {
   setName(selectedProfissional: Profissionais) {
     this.moverAteCabecalho();
     console.log("Selecionado: "+selectedProfissional);
-    if (selectedProfissional.Masculino) {
+    if (selectedProfissional.masculino) {
       this.letra = "o";
     } else {
       this.letra = "a";

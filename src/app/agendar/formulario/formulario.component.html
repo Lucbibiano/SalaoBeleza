@@ -15,7 +15,7 @@
       <select class="browser-default" (change)="mudouProfissional(profissionalChoose.value);" #profissionalChoose>
         <option value="" selected disabled> Selecione um profissional</option>
         <option *ngFor="let profissional of profissionais" [value]="profissional.id">
-          {{ profissional.Nome | removeAT }}
+          {{ profissional.nome | removeAT }}
         </option>
       </select>
     </div>

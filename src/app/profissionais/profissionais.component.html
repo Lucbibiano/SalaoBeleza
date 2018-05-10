@@ -1,6 +1,6 @@
 <div class="container">
   <h1  id="showSelect"  #showSelect>
-    <span *ngIf="showSelected">{{letra.toUpperCase()}} profissional {{showSelected.Nome }} foi selecionad{{letra.toLowerCase()}} <hr></span> 
+    <span *ngIf="showSelected">{{letra.toUpperCase()}} profissional {{showSelected.nome | removeAT}} foi selecionad{{letra.toLowerCase()}} <hr></span> 
     <!-- | removeAT -->
   </h1>
   <div class="center">
