@@ -53,7 +53,8 @@ import { FormataCamposDiretivaDirective } from './shared/custom-directives/Forma
     HttpClientModule,
     ReactiveFormsModule,
     ClipboardModule,
-    FormsModule
+    FormsModule,
+    MaterializeModule
   ],
   providers: [ServicoprestadoService, CadastroService, ServicoService],
   bootstrap: [AppComponent]
