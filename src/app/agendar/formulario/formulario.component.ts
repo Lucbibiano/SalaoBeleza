@@ -3,7 +3,6 @@ import { ServicoService } from '../../shared/servico.service';
 import { Profissionais } from '../../shared/interfaces/Profissionais';
 import { Servicos } from '../../shared/interfaces/servicos';
 import { RemoveAtPipe } from '../../shared/custom-pipes/removeAT.pipe';
-import { DatepickerOptions, NgDatepickerModule, NgDatepickerComponent } from 'ng2-datepicker';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { MaterializeAction } from 'angular2-materialize';
 
@@ -26,16 +25,11 @@ export class FormularioComponent implements OnInit {
   dataAgora: string;
   horaAgora: string;
 
-title = 'Data';
-date: Date;
-options: DatepickerOptions = {
-  displayFormat: 'DD-MM-YYYY',
-  barTitleFormat: "Oggi"  
-};
+
 
 
   constructor(private servicoService: ServicoService) {
-    this.options =  new NgDatepickerModule();
+
   }
 
 
@@ -46,13 +40,13 @@ options: DatepickerOptions = {
     this.setHour();
   }
   setDay() {
-    this.dataAgora = this.data.getFullYear() + "-" + this.complementoDatas((this.data.getMonth() + 1)) + "-" + this.complementoDatas( this.data.getDate());
+    this.dataAgora = this.data.getFullYear() + "-" + this.complementoDatas((this.data.getMonth() + 1)) + "-" + this.complementoDatas(this.data.getDate());
   }
   setHour() {
-    this.horaAgora = this.complementoDatas(this.data.getHours()) + ":" +this.complementoDatas(this.data.getMinutes()); ;
+    this.horaAgora = this.complementoDatas(this.data.getHours()) + ":" + this.complementoDatas(this.data.getMinutes());;
   }
-  complementoDatas(x){
-    if(x <10){ return "0"+ x}
+  complementoDatas(x) {
+    if (x < 10) { return "0" + x }
     return x;
   }
   pegarProfissional(x) {
@@ -85,7 +79,7 @@ options: DatepickerOptions = {
   selectData(data) {
     if (data != undefined && data) {
       this.selectedDate = data;
-      console.log("Data: " + data + " selecionada") 
+      console.log("Data: " + data + " selecionada")
     } else {
       alert("Data inválida");
       document.getElementById("relogio").innerHTML = "00:00";
@@ -128,34 +122,34 @@ options: DatepickerOptions = {
 
 
 export class DatePicker {
-  birthDate:string;
-  birthTime:string;
+  birthDate: string;
+  birthTime: string;
 
-  birthDateActions = new EventEmitter<string|MaterializeAction>();
-  birthTimeActions = new EventEmitter<string|MaterializeAction>();
+  birthDateActions = new EventEmitter<string | MaterializeAction>();
+  birthTimeActions = new EventEmitter<string | MaterializeAction>();
   form: FormGroup;
 
 
   constructor(private fb: FormBuilder) {
-      this.birthDate = "03/12/2017";
-      this.birthTime = "12:36";
-      this.form = this.fb.group({
-          'fromDate': new FormControl('06/07/2017'),
-          'fromTime': new FormControl('08:30')
-      });
+    this.birthDate = "03/12/2017";
+    this.birthTime = "12:36";
+    this.form = this.fb.group({
+      'fromDate': new FormControl('06/07/2017'),
+      'fromTime': new FormControl('08:30')
+    });
   }
 
   openDatePicker() {
-      //actions are open or close
-      this.birthDateActions.emit({action: "pickadate", params: ["open"]});
+    //actions are open or close
+    this.birthDateActions.emit({ action: "pickadate", params: ["open"] });
   }
 
   setTime(time) {
-      this.birthTime = time;
+    this.birthTime = time;
   }
 
   openTimePicker() {
-      //actions are show or hide
-      this.birthTimeActions.emit({action: "pickatime", params: ["show"]});
+    //actions are show or hide
+    this.birthTimeActions.emit({ action: "pickatime", params: ["show"] });
   }
 }
