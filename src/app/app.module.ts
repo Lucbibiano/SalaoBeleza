@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { MaterializeModule } from 'angular2-materialize';
 import 'materialize-css';
-import {ReactiveFormsModule, FormsModule} from '@angular/forms'
+import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 
 import { ServicosComponent } from './servicos/servicos.component';
 import { HttpModule } from '@angular/http';
@@ -28,7 +28,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormataCamposDiretivaDirective } from './shared/custom-directives/FormataCampos-diretiva.directive';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,9 +40,9 @@ import { FormataCamposDiretivaDirective } from './shared/custom-directives/Forma
     ServicoComponent,
     GerarImagensComponent,
     NavBarComponent,
-    FormularioComponent, 
-    RemoveAtPipe, 
-    UsuariosComponent, 
+    FormularioComponent,
+    RemoveAtPipe,
+    UsuariosComponent,
     FormataCamposDiretivaDirective
   ],
   imports: [
