@@ -21,7 +21,38 @@
     </div>
     <div class="col l2 s12">
       <label for="calendario">Selecione uma data: </label>
-      <input type="date" [value]="dataAgora" id="calendario" (blur)="selectData(calendario.value)" #calendario>
+      
+
+
+
+
+
+
+      <input id="birthdate" name="birthdate"
+      
+      materialize="pickadate"
+      [materializeActions]="birthDateActions"
+      [materializeParams]="[{format: 'dd/mm/yyyy'}]"
+      type="text" />
+      
+      <!-- [(ngModel)]="birthDate" -->
+
+
+
+
+
+
+
+
+
+      <!-- [(ngModel)]="date" -->
+
+      <!-- <input materialize="pickadate" type="text">
+      <ng2-pickadate [min]="minDate" (select)="onSelect($event)" modelFormat="DD.MM.YYYY"></ng2-pickadate> -->
+      <!-- formControlName="date" -->
+      <!-- <input materialize="pickadate" formControlName="birthday" [materializeParams]="[birthdateOption]" type="text" type="date" [value]="dataAgora"
+         id="calendario" (blur)="selectData(calendario.value)" #calendario /> -->
+
     </div>
     <div class="col l2   s12">
       <label for="calendario">Selecione um horário: </label>

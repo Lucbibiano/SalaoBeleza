@@ -1,13 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { ServicoService } from '../../shared/servico.service';
 import { Profissionais } from '../../shared/interfaces/Profissionais';
 import { Servicos } from '../../shared/interfaces/servicos';
 import { RemoveAtPipe } from '../../shared/custom-pipes/removeAT.pipe';
+import { DatepickerOptions, NgDatepickerModule, NgDatepickerComponent } from 'ng2-datepicker';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { MaterializeAction } from 'angular2-materialize';
+
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
   styleUrls: ['./formulario.component.css']
 })
+
 export class FormularioComponent implements OnInit {
   profissionaisConst: Profissionais[];
   profissionais: Profissionais[];
@@ -21,8 +26,19 @@ export class FormularioComponent implements OnInit {
   dataAgora: string;
   horaAgora: string;
 
+title = 'Data';
+date: Date;
+options: DatepickerOptions = {
+  displayFormat: 'DD-MM-YYYY',
+  barTitleFormat: "Oggi"  
+};
+
+
   constructor(private servicoService: ServicoService) {
+    this.options =  new NgDatepickerModule();
   }
+
+
   async ngOnInit() {
     this.pegarServico(await this.servicoService.servicos());
     this.pegarProfissional(await this.servicoService.profissionais());
@@ -65,6 +81,7 @@ export class FormularioComponent implements OnInit {
     this.selectedProf = profissionalSelecionado;
   }
 
+
   selectData(data) {
     if (data != undefined && data) {
       this.selectedDate = data;
@@ -87,7 +104,6 @@ export class FormularioComponent implements OnInit {
     this.setHour();
   }
 
-
   mudouServico(id: number) {
     this.id_procurar = id;
     this.selectedServ = this.servicos.filter(servico => servico.id === +this.id_procurar)[0];
@@ -99,5 +115,47 @@ export class FormularioComponent implements OnInit {
     console.log(this.id_procurar);
     this.selectedProf = this.profissionais.filter(profissional => profissional.id === +this.id_procurar)[0];
     console.log("Profissional selecionado: " + this.selectedProf.nome);
+  }
+
+}
+
+
+
+
+
+
+
+
+
+export class DatePicker {
+  birthDate:string;
+  birthTime:string;
+
+  birthDateActions = new EventEmitter<string|MaterializeAction>();
+  birthTimeActions = new EventEmitter<string|MaterializeAction>();
+  form: FormGroup;
+
+
+  constructor(private fb: FormBuilder) {
+      this.birthDate = "03/12/2017";
+      this.birthTime = "12:36";
+      this.form = this.fb.group({
+          'fromDate': new FormControl('06/07/2017'),
+          'fromTime': new FormControl('08:30')
+      });
+  }
+
+  openDatePicker() {
+      //actions are open or close
+      this.birthDateActions.emit({action: "pickadate", params: ["open"]});
+  }
+
+  setTime(time) {
+      this.birthTime = time;
+  }
+
+  openTimePicker() {
+      //actions are show or hide
+      this.birthTimeActions.emit({action: "pickatime", params: ["show"]});
   }
 }
