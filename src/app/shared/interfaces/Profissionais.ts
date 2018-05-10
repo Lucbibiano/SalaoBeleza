@@ -1,16 +1,16 @@
 export class Profissionais{
     "id": number;
-    "Nome": string;
-    "CPF": string;
-    "Idade": number;
-    "RG": string;
-    "CEP": string;
-    "Servicos": string[];
-    "Telefone": number;
-    "NumeroCasa": string;
-    "Usuario": string;
-    "Senha": string;
-    "Tipo": string;
-    "Masculino": number; //Verificar Sexo
+    "nome": string;
+    "cpf": string;
+    "idade": number;
+    "rg": string;
+    "cep": string;
+    "servicos": string[];
+    "telefone": number;
+    "numeroCasa": string;
+    "usuario": string;
+    "senha": string;
+    "tipo": string;
+    "masculino": number; //Verificar Sexo
     "Imagem": string;
 }

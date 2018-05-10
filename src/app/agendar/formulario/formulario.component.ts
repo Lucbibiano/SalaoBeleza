@@ -51,7 +51,7 @@ export class FormularioComponent implements OnInit {
     let indexHave: number[] = [];
     let newProfissionais: Profissionais[] = [];
     for (let i: number = 0; i < this.profissionaisConst.length; i++) {
-      if (this.profissionaisConst[i].Servicos.find(servico => servico === servicoComparar) ? true : false) {
+      if (this.profissionaisConst[i].servicos.find(servico => servico === servicoComparar) ? true : false) {
         indexHave.push(i);
       }
     }
@@ -98,6 +98,6 @@ export class FormularioComponent implements OnInit {
     this.id_procurar = id;
     console.log(this.id_procurar);
     this.selectedProf = this.profissionais.filter(profissional => profissional.id === +this.id_procurar)[0];
-    console.log("Profissional selecionado: " + this.selectedProf.Nome);
+    console.log("Profissional selecionado: " + this.selectedProf.nome);
   }
 }
