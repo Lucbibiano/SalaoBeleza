@@ -14,6 +14,13 @@
     </div>
     <!-- [hidden]="escolha == 0" -->
     <div class="row" [hidden]="escolha == 0">
+      <div> <!-- RADIO BUTTON da escolha do sexo -->
+        <label class="lead">Escolha um pronome de tratamento:</label>
+        <input type="radio" id="1" formControlName="masculino" name="masculino" value="1">
+        <label for="1" class="flow-text">Sr.</label>
+        <input type="radio" id="0" formControlName="masculino" name="masculino" value="0">
+        <label for="0" class="flow-text">Sra.</label>
+      </div>
       <div class="col l6 s12">
         <label class="lead">Nome:</label>
         <span [hidden]="cadastroUsuario.controls['nome'].untouched || cadastroUsuario.controls['nome'].valid">

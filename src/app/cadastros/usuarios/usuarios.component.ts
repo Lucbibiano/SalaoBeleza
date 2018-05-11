@@ -33,10 +33,6 @@ export class UsuariosComponent implements OnInit {
     this.leitorImg.readAsDataURL(this.imgFile);
   }
 
-  verificaUser(cadastroUsuario) {
-    this.usuarioIsValid = this.cadastroServ.verificaUser("" + cadastroUsuario.usuario);
-  }
-
   criaFormulario() {
     this.cadastroUsuario = new FormGroup({
       nome: new FormControl('', [Validators.required, Validators.minLength(5)]),
@@ -45,12 +41,17 @@ export class UsuariosComponent implements OnInit {
       cep: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern("^[0-9]*$")]),
       senha: new FormControl('', [Validators.required]),
       servicos: new FormControl(''),
+      masculino: new FormControl('', [Validators.required]),
       tipo: new FormControl('', [Validators.required]),
       telefone: new FormControl('', [Validators.required, Validators.pattern("^[0-9]*$")]),
       numeroCasa: new FormControl('', [Validators.pattern("^[0-9]*$")]),
       rg: new FormControl('', [Validators.required, Validators.minLength(9), Validators.pattern("^[0-9]*$")]),
       idade: new FormControl('', [Validators.pattern("^[0-9]*$")])
     });
+  }
+  
+  verificaUser(cadastroUsuario) {
+    this.usuarioIsValid = this.cadastroServ.verificaUser("" + cadastroUsuario.usuario);
   }
 
   abrirForm(valor) {

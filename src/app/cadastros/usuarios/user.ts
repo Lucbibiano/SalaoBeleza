@@ -7,6 +7,7 @@ export class Usuario {
     cep: number;
     senha: string;
     imagem: string;
+    masculino: number;
     //PROFISSIONAIS
     servicos?: string[];
     tipo?: number;
